@@ -1,6 +1,8 @@
 $(document).ready(function() { 
-	cargarPromos(); 
+
+	cargarPromos();
 	cargarProductos();
-
-	})
-
+	
+	$('#loading').hide();
+    $('#imgLoading').hide();
+})

@@ -7,7 +7,7 @@
 
         <title>Pasteleria</title>
         <link rel="stylesheet" href="css/jquery.mobile-1.0.1.min.css" />
-        <!-- <link rel="stylesheet" href="css/style1.css" /> -->
+        <link rel="stylesheet" href="css/main.css" /> 
         
         <script src="js/lib/jquery-1.7.1.min.js"></script>
         <script src="js/lib/jquery.mobile-1.1.0-rc.1.min.js"></script>
@@ -18,6 +18,12 @@
     </head>
     
     <body>
+    	
+    	<div id="loading"></div>
+        <div id="imgLoading">
+            <img width="55" height="55" src="img/ajax-loader.gif" alt="loading" title="loading" />
+        </div>
+    	
     	<!--HOME-->
     	<div data-role="page" id="home"> 
             <div data-role="header" data-id="menu" data-position="fixed" data-theme="b">
@@ -131,8 +137,7 @@
             </div> <!-- /content --> 
         
             <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari & Diego Schwindt - 2º proyecto de Ingeniería de Aplicaicones Web, UNS [1º cuatrim 2012]</div> 
-        </div> <!-- /pedido-->
-        
+        </div> <!-- /pedido-->        
 
     </body>
 </html>

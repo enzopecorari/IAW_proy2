@@ -1,4 +1,7 @@
 $(document).ready(function() { 
-	cargarPromos(); 
-	})
+	cargarPromos();
+	
+	$('#loading').hide();
+    $('#imgLoading').hide();
+})
 

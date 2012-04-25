@@ -1,1 +1,1 @@
-cargarPromos(1);
+cargarPromos();

@@ -1,13 +1,15 @@
-function cargarPromos(numPromo){
+var promoActual = 0;
+function cargarPromos(){
+
 	var xmlDoc = loadXMLDoc("xml/promos.xml");
 	var promos = xmlDoc.getElementsByTagName("promo");
-	if (numPromo<promos.length){
-		$("#tittleProm").text(promos[numPromo].children[0].firstChild.nodeValue);
-		$("#descProm").text(promos[numPromo].children[1].firstChild.nodeValue);
-		$("#precioProm").text(promos[numPromo].children[2].firstChild.nodeValue);
-		$("#imgProm").html("");
-		for(j = 0; j <promos[numPromo].children[4].children.length;j++)
-			$("#imgProm").append("<img src='img/"+promos[numPromo].children[4].children[j].firstChild.nodeValue+"' alt='imagen promo'/>");
-	}
+	promoActual = (promoActual +1) %promos.length;
+
+	$("#tittleProm").text(promos[promoActual].childNodes[1].firstChild.nodeValue);
+	$("#descProm").text(promos[promoActual].childNodes[3].firstChild.nodeValue);
+	$("#precioProm").text(promos[promoActual].childNodes[5].firstChild.nodeValue);
+	$("#imgProm").html("");
+	for(j = 1; j <promos[promoActual].childNodes[9].childNodes.length;j = j + 2)
+		$("#imgProm").append("<img src='img/"+promos[promoActual].childNodes[9].childNodes[j].firstChild.nodeValue+"' alt='imagen promo'/>");
 
 }

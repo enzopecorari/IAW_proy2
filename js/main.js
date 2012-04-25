@@ -1,2 +1,6 @@
-cargarPromos();
-cargarProductos();
+$(document).ready(function() { 
+	cargarPromos(); 
+	cargarProductos();
+
+	})
+

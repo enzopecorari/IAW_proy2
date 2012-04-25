@@ -1,48 +1,125 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Panaderia</title>
+        
+
+        <title>Pasteleria</title>
         <link rel="stylesheet" href="css/jquery.mobile-1.0.1.min.css" />
         <!-- <link rel="stylesheet" href="css/style1.css" /> -->
         
         <script src="js/lib/jquery-1.7.1.min.js"></script>
         <script src="js/lib/jquery.mobile-1.1.0-rc.1.min.js"></script>
-        <script language="JavaScript" src="js/loadXML.js" type="text/javascript"></script>
-
+        <script src="js/loadXML.js" type="text/javascript"></script>
+        <script src="js/promos.js"></script>
+        <script src="js/main.js"></script>
+        
     </head>
+    
     <body>
-    	<div id="header">
-    		<!-- titulo pagina ("PAnaderia ...") y logo.. y acá tamb poner la ocpion de cajbiar de estilo.. eso hay que guardarlo en las coookies --> 
-    	</div> 
-    	
-    	<div id="content">
-    		<div id="menu"> </div>
-    		
-    		<!-- Segun la opcion del menu que elijamos mostramos 1 de estos 4 divs. Si  llegamos trato de hacerlo con router, si no con vistas como hicimos el MyTwitt --> 
-    		<div id="home">
-    			
-    		</div>
-    		
-    		<div id="categorias">
-    			
-    		</div>
-    		
-    		<div id="promociones">
-    			<span id="tittleProm"></span>
+    	<!--HOME-->
+    	<div data-role="page" id="home"> 
+            <div data-role="header" data-id="menu" data-position="fixed" data-theme="b">
+                NOMBRE- LOGO - Cambio estilos
+                <div data-role="navbar">
+					<ul>
+						<li><a href="#home" class="ui-btn-active ui-state-persist">Home</a></li>
+						<li><a href="#productos" data-transition="slide">Productos</a></li>
+						<li><a href="#promociones" data-transition="slide">Promociones</a></li>
+						<li><a href="#pedido" data-transition="slide">Pedido</a></li>
+					</ul>
+                </div><!-- /navbar -->
+            </div><!-- /header --> 
+            
+            <div data-role="content">
+                			<h3>Section1</h3>
+            
+            
+            
+            </div>
+            
+            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari & Diego Schwindt - 2º proyecto de Ingeniería de Aplicaicones Web, UNS [1º cuatrim 2012]</div> 
+        
+        </div> <!-- /home -->
+            
+        <!--PRODUCTOS-->
+        <div data-role="page" id="productos"> 
+             <div data-role="header" data-id="menu" data-position="fixed" data-theme="b">
+                NOMBRE- LOGO - Cambio estilos
+                <div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-transition="slide">Home</a></li>
+						<li><a href="#productos" class="ui-btn-active ui-state-persist">Productos</a></li>
+						<li><a href="#promociones" data-transition="slide">Promociones</a></li>
+						<li><a href="#pedido" data-transition="slide">Pedido</a></li>
+					</ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->   
+            <div data-role="content">
+                			<h3>Section2</h3>
+            
+            
+            
+            
+            </div> 
+            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari & Diego Schwindt - 2º proyecto de Ingeniería de Aplicaicones Web, UNS [1º cuatrim 2012]</div> 
+        </div> <!-- /productos-->
+        
+        
+        <!--PROMOCIONES-->
+        <div data-role="page" id="promociones"> 
+             <div data-role="header" data-id="menu" data-position="fixed" data-theme="b">
+                NOMBRE- LOGO - Cambio estilos
+                <div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-transition="slide">Home</a></li>
+						<li><a href="#productos" data-transition="slide">Productos</a></li>
+						<li><a href="#promociones" class="ui-btn-active ui-state-persist">Promociones</a></li>
+						<li><a href="#pedido" data-transition="slide">Pedido</a></li>
+					</ul>
+                </div><!-- /navbar -->
+            </div><!-- /header --> 
+            
+            <div data-role="content">
+				<span id="tittleProm"></span>
     			<span id="descProm"></span>
     			<span id="precioProm"></span>
     			<div id="imgProm"></div>
     			<button onclick="cargarPromos()">Next</button>
-    		</div>
-    		
-    		<div id="pedido">
-    			
-    		</div>
-    	</div>
-    	
-        <div id="footer"></div>
-        <script src="js/promos.js"></script>
-                <script src="js/main.js"></script>
+            
+            
+            
+            </div> <!-- /content --> 
+        
+            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari & Diego Schwindt - 2º proyecto de Ingeniería de Aplicaicones Web, UNS [1º cuatrim 2012]</div> 
+        </div> <!-- /promociones-->
+        
+        
+        <!--PEDIDO-->
+        <div data-role="page" id="pedido"> 
+             <div data-role="header" data-id="menu" data-position="fixed" data-theme="b">
+                NOMBRE- LOGO - Cambio estilos
+                <div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-transition="slide">Home</a></li>
+						<li><a href="#productos" data-transition="slide">Productos</a></li>
+						<li><a href="#promociones" data-transition="slide">Promociones</a></li>
+						<li><a href="#pedido" class="ui-btn-active ui-state-persist">Pedido</a></li>
+					</ul>
+                </div><!-- /navbar -->
+            </div><!-- /header --> 
+            
+            <div data-role="content">
+				<h3>Section4</h3>
+            
+            
+            
+            </div> <!-- /content --> 
+        
+            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari & Diego Schwindt - 2º proyecto de Ingeniería de Aplicaicones Web, UNS [1º cuatrim 2012]</div> 
+        </div> <!-- /pedido-->
+        
+        
     </body>
 </html>

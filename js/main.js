@@ -1,1 +1,4 @@
-cargarPromos();
+$(document).ready(function() { 
+	cargarPromos(); 
+	})
+

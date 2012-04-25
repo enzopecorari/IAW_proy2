@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE promos[
+	<!ELEMENT promos (promo)+>
+	<!ELEMENT promo (nombre, descripcion, precio, precio_sin_promo, images)>	
+	<!ELEMENT nombre (#PCDATA)>
+	<!ELEMENT descripcion (#PCDATA)>
+	<!ELEMENT precio (#PCDATA)>
+	<!ELEMENT precio_sin_promo (#PCDATA)>
+	<!ELEMENT images (img+)>
+	<!ELEMENT img (#PCDATA)>
+]>
+<promos>
+	<promo>
+		<nombre>Combo 1</nombre>
+		<descripcion>LLevás 3 Cheese Cake pagás solo 2!</descripcion>
+		<precio>158</precio>
+		<precio_sin_promo>237</precio_sin_promo>
+		<images>
+			<img>small/tortas/cheescake.jpg</img>
+		</images>
+	</promo>
+	<promo>
+	<nombre>Combo 2</nombre>
+	<descripcion>LLevás una torta Rogel y una docena de medialunas por solo $88!</descripcion>
+	<precio>88</precio>
+	<precio_sin_promo>109</precio_sin_promo>
+	<images>
+		<img>small/tortas/rogel.jpg</img>
+		<img>small/otros/medialunas.jpg</img>
+	</images>
+	</promo>
+	<promo>
+	<nombre>Combo 3</nombre>
+	<descripcion>Con la compra de un Lemon Pie, lleva media docena de brownies gratis!</descripcion>
+	<precio>79</precio>
+	<precio_sin_promo>99</precio_sin_promo>
+	<images>
+		<img>small/tartas/lemonpie.jpg</img>
+		<img>small/brownies/brownierojo.jpg</img>
+	</images>
+	</promo>
+</promos>

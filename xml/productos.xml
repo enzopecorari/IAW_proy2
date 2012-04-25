@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE productos[
+	<!ELEMENT productos (categoria)+>
+	<!ELEMENT categoria (nombre, producto+)>	
+	<!ELEMENT producto (nombre, precio, peso, imgSmall, imgLarge)>
+	<!ELEMENT nombre (#PCDATA)>
+	<!ELEMENT precio (#PCDATA)>
+	<!ELEMENT peso (#PCDATA)>
+	<!ELEMENT imgSmall (#PCDATA)>
+	<!ELEMENT imgLarge (#PCDATA)>
+]>
+<productos>
+	<categoria>
+			<nombre>Tortas</nombre>
+			<producto>
+				<nombre>Brownie sorpresa cake</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/browniesorpresa.jpg</imgSmall>
+				<imgLarge>large/tortas/browniesorpresa.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Cheese cake</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/cheescake.jpg</imgSmall>
+				<imgLarge>large/tortas/cheescake.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Clarisa</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/clarisa.jpg</imgSmall>
+				<imgLarge>large/tortas/clarisa.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Dolcezza</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/dolcezza.jpg</imgSmall>
+				<imgLarge>large/tortas/dolcezza.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Fantasia</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/fantasia.jpg</imgSmall>
+				<imgLarge>large/tortas/fantasia.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Marquise</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/marquise.jpg</imgSmall>
+				<imgLarge>large/tortas/marquise.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Merengada</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/merengada.jpg</imgSmall>
+				<imgLarge>large/tortas/merengada.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Pasion</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/pasion.jpg</imgSmall>
+				<imgLarge>large/tortas/pasion.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Rogel</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/rogel.jpg</imgSmall>
+				<imgLarge>large/tortas/rogel.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Tentacion</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/tentacion.jpg</imgSmall>
+				<imgLarge>large/tortas/tentacion.jpg</imgLarge>
+			</producto>
+	</categoria>
+	<categoria>
+			<nombre>Tartas</nombre>
+			<producto>
+				<nombre>Lemonpie</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/lemonpie.jpg</imgSmall>
+				<imgLarge>large/tortas/lemonpie.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Tarta de manzana</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/manzana.jpg</imgSmall>
+				<imgLarge>large/tortas/manzana.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Tarta de ricota</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/ricota.jpg</imgSmall>
+				<imgLarge>large/tortas/ricota.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Tarta de de nuez</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/tartaddlynuez.jpg</imgSmall>
+				<imgLarge>large/tortas/tartaddlynuez.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Tarta de frambuesas</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/tartadeframbuesas.jpg</imgSmall>
+				<imgLarge>large/tortas/tartadeframbuesas.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Tarta de frutilla</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/tartafrutilla.jpg</imgSmall>
+				<imgLarge>large/tortas/tartafrutilla.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Tarta de frutos rojos</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/tartafrutosrojos.jpg</imgSmall>
+				<imgLarge>large/tortas/tartafrutosrojos.jpg</imgLarge>
+			</producto>			
+	</categoria>
+	<categoria>
+			<nombre>Budines y tartas secas</nombre>
+			<producto>
+				<nombre>Budín con chips de chocolate</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/budinchipsdechocolate.jpg</imgSmall>
+				<imgLarge>large/tortas/budinchipsdechocolate.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Budín de almendras</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/budindealmendras.jpg</imgSmall>
+				<imgLarge>large/tortas/budindealmendras.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Budín marmolado</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/budinmarmolado.jpg</imgSmall>
+				<imgLarge>large/tortas/budinmarmolado.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Mini alemana</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/minialemana.jpg</imgSmall>
+				<imgLarge>large/tortas/minialemana.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Mini torta de nuez</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/minitortadenuez.jpg</imgSmall>
+				<imgLarge>large/tortas/minitortadenuez.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Pan genoves</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/pangenoves.jpg</imgSmall>
+				<imgLarge>large/tortas/pangenoves.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Torta alemana</nombre>
+				<precio>179</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/tortaalemana.jpg</imgSmall>
+				<imgLarge>large/tortas/tortaalemana.jpg</imgLarge>
+			</producto>		
+			<producto>
+				<nombre>Torta de Nuez</nombre>
+				<precio>179</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/tortadenuez.jpg</imgSmall>
+				<imgLarge>large/tortas/tortadenuez.jpg</imgLarge>
+			</producto>
+	</categoria>
+	<categoria>
+			<nombre>Brownies</nombre>
+			<producto>
+				<nombre>Brownie Cioccolatino</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/brownieddl.jpg</imgSmall>
+				<imgLarge>large/tortas/brownieddl.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Brownie Meringato</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/browniemerengue.jpg</imgSmall>
+				<imgLarge>large/tortas/browniemerengue.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Brownie Marmelliata</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/brownierojo.jpg</imgSmall>
+				<imgLarge>large/tortas/brownierojo.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Limonata</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/cuadradodelimon.jpg</imgSmall>
+				<imgLarge>large/tortas/cuadradodelimon.jpg</imgLarge>
+			</producto>	
+	</categoria>
+	<categoria>
+			<nombre>Otros</nombre>
+			<producto>
+				<nombre>Medialunas</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/medialunas.jpg</imgSmall>
+				<imgLarge>large/tortas/medialunas.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Muffins</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/muffins.jpg</imgSmall>
+				<imgLarge>large/tortas/muffins.jpg</imgLarge>
+			</producto>
+			<producto>
+				<nombre>Scons</nombre>
+				<precio>79</precio>
+				<peso>4</peso>
+				<imgSmall>small/tortas/scons.jpg</imgSmall>
+				<imgLarge>large/tortas/scons.jpg</imgLarge>
+			</producto>
+	</categoria>
+</productos>

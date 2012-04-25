@@ -1,1 +1,2 @@
 cargarPromos();
+cargarProductos();

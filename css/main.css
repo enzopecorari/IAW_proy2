@@ -6,7 +6,7 @@ div#loading {
     width:100%;
     height:100%;
     background-color:#AAA;
-    z-index:99999;
+    z-index:99998;
     filter:alpha(opacity=60);
     -moz-opacity:.60;
     opacity:.60;
@@ -20,4 +20,113 @@ div#imgLoading {
     width:55px;
     height:55px;
     z-index:99999;
+}
+
+div.agregar  {
+    padding: 10px 10px 10px 10px;
+    display:none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width:500px;
+    height:400px;
+    margin-left: -250px;
+    margin-top: -200px;
+    z-index:99999;
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    -moz-box-background-clip: padding-box;
+    -webkit-box-background-clip: padding-box;
+    background-clip: padding-box;
+    -moz-box-border-radius: .3em;
+    -webkit-box-border-radius: .3em;
+    border-radius: .3em;
+    background: rgba(224,239,246,0.85);
+}
+
+div.agregar  .textConfirm{
+    text-align: center;
+    width:100%;
+    height:75%;
+    
+}
+
+div.agregar  .textConfirm h3 {
+    font-style: italic;
+    
+}
+
+/*
+
+div.agregar  .buttonsConfirm{
+    text-align: center;
+    width:100%;
+    height:25%;
+    padding-bottom: 5px;
+}
+
+div.agregar .buttonsConfirm a {
+    cursor: pointer;
+    padding: 5px 10px 5px 10px;
+    margin: 5px 10px 5px 10px;
+    font-weight: bold;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    -moz-box-background-clip: padding-box;
+    -webkit-box-background-clip: padding-box;
+    background-clip: padding-box;
+    -moz-box-border-radius: .1em;
+    -webkit-box-border-radius: .1em;
+    border-radius: .1em;
+
+    
+}
+
+div.agregar .buttonsConfirm a.ok {
+    background: rgba(51,204,0,0.8);
+    text-shadow: 0px 0px 0px;
+}
+
+
+div.agregar .buttonsConfirm a.cancel {
+    background: rgba(192,192,192,0.8);
+    text-shadow: 0px 0px 0px;
+}
+
+div.agregar .buttonsConfirm a.ok:hover {
+    
+    -moz-box-shadow: 0 3px 5px rgba(0,0,64,.3);
+    -webkit-box-shadow: 0 3px 5px rgba(0,0,64,.3);
+    box-shadow: 0 3px 5px rgba(0,0,64,.3);
+}
+
+
+div.agregar .buttonsConfirm a.cancel:hover {
+ 
+    -moz-box-shadow: 0 3px 5px rgba(64,64,64,.3);
+    -webkit-box-shadow: 0 5px 4px rgba(64,64,64,.3);
+    box-shadow: 0 3px 5px rgba(64,64,64,.3);
+}
+
+div.agregar .buttonsConfirm a.ok:active {
+    background: rgba(102,255,51,0.8);
+
+}
+
+
+div.agregar .buttonsConfirm a.cancel:active {
+    background: rgba(224,224,224,0.8);
+}
+*/
+
+#listaCat .producto:hover {
+	-moz-box-shadow: 0 3px 5px rgba(0,0,64,.3);
+    -webkit-box-shadow: 0 3px 5px rgba(0,0,64,.3);
+    box-shadow: 0 3px 5px rgba(0,0,64,.3);
+}
+
+#listaCat .producto:active {
+	background: rgba(224,224,224,0.8);
 }

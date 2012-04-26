@@ -1,4 +1,3 @@
-
 function cargarProductos(){
 
 	var categorias = []
@@ -6,7 +5,7 @@ function cargarProductos(){
 	var xmlDoc = loadXMLDoc("xml/productos.xml");
 	var prods = xmlDoc.getElementsByTagName("categoria");
 	for(j = 0; j <prods.length; j++){ //Por cada categoria
-		cat = new Caterogia(prods[j].childNodes[1].firstChild.nodeValue);
+		cat = new Categoria(prods[j].childNodes[1].firstChild.nodeValue);
 		
 		for (l = 3; l < prods[j].childNodes.length; l = l + 2){
 			var _nombre = prods[j].childNodes[l].childNodes[1].firstChild.nodeValue;

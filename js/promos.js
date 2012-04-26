@@ -1,4 +1,4 @@
-var promoActual = 0;
+var promoActual = -1;
 function cargarPromos(){
 
 	var xmlDoc = loadXMLDoc("xml/promos.xml");

@@ -1,32 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE promos SYSTEM "promos.dtd">
 <promos>
 	<promo>
 		<nombre>Combo 1</nombre>
 		<descripcion>LLevás 3 Fantasia Cake pagás solo 2!</descripcion>
 		<precio>158</precio>
-		<precio_sin_promo>237</precio_sin_promo>
-		<images>
-			<img>small/tortas/fantasia.jpg</img>
-		</images>
+		<descuento>79</descuento>
+		<productos>
+			<IDproducto>105</IDproducto>
+		</productos>
 	</promo>
 	<promo>
-	<nombre>Combo 2</nombre>
-	<descripcion>LLevás una torta Rogel y una docena de medialunas por solo $88!</descripcion>
-	<precio>88</precio>
-	<precio_sin_promo>109</precio_sin_promo>
-	<images>
-		<img>small/tortas/rogel.jpg</img>
-		<img>small/otros/medialunas.jpg</img>
-	</images>
+		<nombre>Combo 2</nombre>
+		<descripcion>LLevás una torta Rogel y una media docena de medialunas por solo $58!</descripcion>
+		<precio>58</precio>
+		<descuento>12</descuento>
+		<productos>
+			<IDproducto>109</IDproducto>
+			<IDproducto>501</IDproducto>
+		</productos>
 	</promo>
 	<promo>
-	<nombre>Combo 3</nombre>
-	<descripcion>Con la compra de un Lemon Pie, lleva media docena de brownies gratis!</descripcion>
-	<precio>79</precio>
-	<precio_sin_promo>99</precio_sin_promo>
-	<images>
-		<img>small/tartas/lemonpie.jpg</img>
-		<img>small/brownies/brownierojo.jpg</img>
-	</images>
+		<nombre>Combo 3</nombre>
+		<descripcion>Con la compra de un Lemon Pie, lleva 5 brownies gratis!</descripcion>
+		<precio>79</precio>
+		<descuento>10</descuento>
+		<productos>
+			<IDproducto>109</IDproducto>
+			<IDproducto>401</IDproducto>
+		</productos>
+	</promo>
+	<promo>
+		<nombre>Promoción Dia del Trabador</nombre>
+		<descripcion>Disfrute en su día las mejores medialunas 20% OFF!</descripcion>
+		<precio>19.2</precio>
+		<descuento>4.8</descuento>
+		<productos>
+			<IDproducto>501</IDproducto>
+		</productos>
+	</promo>
+		<promo>
+		<nombre>Promo invierno!</nombre>
+		<descripcion>El mejor remedio para el frío! Budín marmolado + Pan genoves por $39</descripcion>
+		<precio>39</precio>
+		<descuento>13</descuento>
+		<productos>
+			<IDproducto>303</IDproducto>
+			<IDproducto>306</IDproducto>
+		</productos>
 	</promo>
 </promos>

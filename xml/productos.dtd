@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!ELEMENT productos (categoria)+>
 	<!ELEMENT categoria (nombre, producto+)>	
-	<!ELEMENT producto (nombre, precio, peso, imgSmall, imgLarge)>
+	<!ELEMENT producto (nombre, precio, peso, imgSmall, imgLarge, unidadEncarge?)>
+	<!ATTLIST producto id ID #REQUIRED>
 	<!ELEMENT nombre (#PCDATA)>
 	<!ELEMENT precio (#PCDATA)>
 	<!ELEMENT peso (#PCDATA)>
 	<!ELEMENT imgSmall (#PCDATA)>
 	<!ELEMENT imgLarge (#PCDATA)>
+	<!ELEMENT unidadEncarge (#PCDATA)>

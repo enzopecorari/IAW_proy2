@@ -1,1 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+ <!ELEMENT promos (promo)+>
+ <!ELEMENT promo (nombre, descripcion, precio, descuento, productos)> 
+ <!ELEMENT nombre (#PCDATA)>
+ <!ELEMENT descripcion (#PCDATA)>
+ <!ELEMENT precio (#PCDATA)>
+ <!ELEMENT descuento (#PCDATA)>
+ <!ELEMENT productos (IDproducto+)>
+ <!ELEMENT IDproducto (#PCDATA)>

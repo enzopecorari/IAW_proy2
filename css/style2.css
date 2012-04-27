@@ -1,1 +1,10 @@
 @CHARSET "ISO-8859-1";
+@CHARSET "ISO-8859-1";
+#headerImg {
+	  background-image: url(../img/header.jpg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding-top:18%;
+	
+
+}

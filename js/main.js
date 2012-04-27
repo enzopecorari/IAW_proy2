@@ -29,11 +29,14 @@ function cargarProductos(){
 		
 		
 		for (l = 3; l < prods[j].childNodes.length; l = l + 2){
-			_nombre = prods[j].childNodes[l].childNodes[1].firstChild.nodeValue;
-			_precio = prods[j].childNodes[l].childNodes[3].firstChild.nodeValue;
-			_peso = prods[j].childNodes[l].childNodes[5].firstChild.nodeValue;
-			_imgS = prods[j].childNodes[l].childNodes[7].firstChild.nodeValue;
-			_imgL = prods[j].childNodes[l].childNodes[9].firstChild.nodeValue;
+			var prod = prods[j].childNodes[l]; 
+			_nombre = prod.childNodes[1].firstChild.nodeValue;
+			_precio = prod.childNodes[3].firstChild.nodeValue;
+			_peso = prod.childNodes[5].firstChild.nodeValue;
+			_imgS = prod.childNodes[7].firstChild.nodeValue;
+			_imgL = prod.childNodes[9].firstChild.nodeValue;
+			_unidEncargue = prod.childNodes[11].firstChild.nodeValue;
+			
 			produc = new Producto(_nombre,_precio,_peso,_imgS,_imgL,nomCat);
 			id= cat.getCantidad() + 100*categorias.length;
 			cat.addProducto(produc);

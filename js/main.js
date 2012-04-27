@@ -35,7 +35,7 @@ function cargarProductos(){
 			_peso = prod.childNodes[5].firstChild.nodeValue;
 			_imgS = prod.childNodes[7].firstChild.nodeValue;
 			_imgL = prod.childNodes[9].firstChild.nodeValue;
-			_unidEncargue = prod.childNodes[11].firstChild.nodeValue;
+		//	_unidEncargue = prod.childNodes[11].firstChild.nodeValue;
 			
 			produc = new Producto(_nombre,_precio,_peso,_imgS,_imgL,nomCat);
 			id= cat.getCantidad() + 100*categorias.length;

@@ -31,13 +31,28 @@
 }
 #nextPromo {
 	
-	text-align:center;
-	position:relative;
-	left:40px;
-	bottom:0px;
+    cursor:pointer;
+    position: absolute;
+    right:20px;
+    top: 10px;
+    width: 41px;
+    height: 40px;
+    background: url(../img/nextP.png) no-repeat;
+
+}
+#pedirPromo {
+	
+    cursor:pointer;
+    position: absolute;
+    left:20px;
+    top: 10px;
+    width: 54px;
+    height: 35px;
+    background: url(../img/cartP.gif) no-repeat;
+
 }
 #tittleProm {
-	margin-left: 80px;
+	margin-left: 0px;
 	padding: 50px 0px 0px 0px;
 	display: inline;
 	font-style:italic;

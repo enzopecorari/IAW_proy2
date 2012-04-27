@@ -5,6 +5,7 @@ $(document).ready(function() {
 	$('#nextPromo').click(function() {
 		cargarPromos();
 	})
+
 	cargarProductos();
 	
 	$('div#loading').hide();

@@ -1,83 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE productos[
-	<!ELEMENT productos (categoria)+>
-	<!ELEMENT categoria (nombre, producto+)>	
-	<!ELEMENT producto (nombre, precio, peso, imgSmall, imgLarge, unidadEncarge?)>
-	<!ATTLIST producto id ID #REQUIRED>
-	<!ELEMENT nombre (#PCDATA)>
-	<!ELEMENT precio (#PCDATA)>
-	<!ELEMENT peso (#PCDATA)>
-	<!ELEMENT imgSmall (#PCDATA)>
-	<!ELEMENT imgLarge (#PCDATA)>
-	<!ELEMENT unidadEncarge (#PCDATA)>
-]>
+<!DOCTYPE productos SYSTEM "productos.dtd">
 <productos>
 	<categoria>
 			<nombre>Tortas</nombre>
-			<producto id="101">
+			<producto>
 				<nombre>Brownie sorpresa cake</nombre>
-				<precio>56</precio>
-				<peso></peso>
+				<precio>79</precio>
+				<peso>4</peso>
 				<imgSmall>small/tortas/browniesorpresa.jpg</imgSmall>
 				<imgLarge>large/tortas/browniesorpresa.jpg</imgLarge>
 			</producto>
-			<producto id="102">
+			<producto>
 				<nombre>Cheese cake</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tortas/cheescake.jpg</imgSmall>
 				<imgLarge>large/tortas/cheescake.jpg</imgLarge>
 			</producto>
-			<producto id="103">
+			<producto>
 				<nombre>Clarisa</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tortas/clarisa.jpg</imgSmall>
 				<imgLarge>large/tortas/clarisa.jpg</imgLarge>
 			</producto>
-			<producto id="104">
+			<producto>
 				<nombre>Dolcezza</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tortas/dolcezza.jpg</imgSmall>
 				<imgLarge>large/tortas/dolcezza.jpg</imgLarge>
 			</producto>
-			<producto id="105">
+			<producto>
 				<nombre>Fantasia</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tortas/fantasia.jpg</imgSmall>
 				<imgLarge>large/tortas/fantasia.jpg</imgLarge>
 			</producto>
-			<producto id="106">
+			<producto>
 				<nombre>Marquise</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tortas/marquise.jpg</imgSmall>
 				<imgLarge>large/tortas/marquise.jpg</imgLarge>
 			</producto>
-			<producto id="107">
+			<producto>
 				<nombre>Merengada</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tortas/merengada.jpg</imgSmall>
 				<imgLarge>large/tortas/merengada.jpg</imgLarge>
 			</producto>
-			<producto id="108">
+			<producto>
 				<nombre>Pasion</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tortas/pasion.jpg</imgSmall>
 				<imgLarge>large/tortas/pasion.jpg</imgLarge>
 			</producto>
-			<producto id="109">
+			<producto>
 				<nombre>Rogel</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tortas/rogel.jpg</imgSmall>
 				<imgLarge>large/tortas/rogel.jpg</imgLarge>
 			</producto>
-			<producto id="110">
+			<producto>
 				<nombre>Tentacion</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
@@ -87,49 +76,49 @@
 	</categoria>
 	<categoria>
 			<nombre>Tartas</nombre>
-			<producto id="201">
+			<producto>
 				<nombre>Lemonpie</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tartas/lemonpie.jpg</imgSmall>
 				<imgLarge>large/tartas/lemonpie.jpg</imgLarge>
 			</producto>
-			<producto id="202">
+			<producto>
 				<nombre>Tarta de manzana</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tartas/manzana.jpg</imgSmall>
 				<imgLarge>large/tartas/manzana.jpg</imgLarge>
 			</producto>
-			<producto id="203">
+			<producto>
 				<nombre>Tarta de ricota</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tartas/ricota.jpg</imgSmall>
 				<imgLarge>large/tartas/ricota.jpg</imgLarge>
 			</producto>
-			<producto id="204">
+			<producto>
 				<nombre>Tarta de de nuez</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tartas/tartaddlynuez.jpg</imgSmall>
 				<imgLarge>large/tartas/tartaddlynuez.jpg</imgLarge>
 			</producto>
-			<producto id="205">
+			<producto>
 				<nombre>Tarta de frambuesas</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tartas/tartadeframbuesas.jpg</imgSmall>
 				<imgLarge>large/tartas/tartadeframbuesas.jpg</imgLarge>
 			</producto>
-			<producto id="206">
+			<producto>
 				<nombre>Tarta de frutilla</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/tartas/tartafrutilla.jpg</imgSmall>
 				<imgLarge>large/tartas/tartafrutilla.jpg</imgLarge>
 			</producto>
-			<producto id="207">
+			<producto>
 				<nombre>Tarta de frutos rojos</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
@@ -139,56 +128,56 @@
 	</categoria>
 	<categoria>
 			<nombre>Budines y tartas secas</nombre>
-			<producto id="301">
+			<producto>
 				<nombre>Budín con chips de chocolate</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/budines_y_tortas_secas/budinchipsdechocolate.jpg</imgSmall>
 				<imgLarge>large/budines_y_tortas_secas/budinchipsdechocolate.jpg</imgLarge>
 			</producto>
-			<producto id="302">
+			<producto>
 				<nombre>Budín de almendras</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/budines_y_tortas_secas/budindealmendras.jpg</imgSmall>
 				<imgLarge>large/budines_y_tortas_secas/budindealmendras.jpg</imgLarge>
 			</producto>
-			<producto id="303">
+			<producto>
 				<nombre>Budín marmolado</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/budines_y_tortas_secas/budinmarmolado.jpg</imgSmall>
 				<imgLarge>large/budines_y_tortas_secas/budinmarmolado.jpg</imgLarge>
 			</producto>
-			<producto id="304">
+			<producto>
 				<nombre>Mini alemana</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/budines_y_tortas_secas/minialemana.jpg</imgSmall>
 				<imgLarge>large/budines_y_tortas_secas/minialemana.jpg</imgLarge>
 			</producto>
-			<producto id="305">
+			<producto>
 				<nombre>Mini torta de nuez</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/budines_y_tortas_secas/minitortadenuez.jpg</imgSmall>
 				<imgLarge>large/budines_y_tortas_secas/minitortadenuez.jpg</imgLarge>
 			</producto>
-			<producto id="306">
+			<producto>
 				<nombre>Pan genoves</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/budines_y_tortas_secas/pangenoves.jpg</imgSmall>
 				<imgLarge>large/budines_y_tortas_secas/pangenoves.jpg</imgLarge>
 			</producto>
-			<producto id="307">
+			<producto>
 				<nombre>Torta alemana</nombre>
 				<precio>179</precio>
 				<peso>4</peso>
 				<imgSmall>small/budines_y_tortas_secas/tortaalemana.jpg</imgSmall>
 				<imgLarge>large/budines_y_tortas_secas/tortaalemana.jpg</imgLarge>
 			</producto>		
-			<producto id="308">
+			<producto>
 				<nombre>Torta de Nuez</nombre>
 				<precio>179</precio>
 				<peso>4</peso>
@@ -198,64 +187,57 @@
 	</categoria>
 	<categoria>
 			<nombre>Brownies</nombre>
-			<producto id="401">
+			<producto>
 				<nombre>Brownie Cioccolatino</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/brownies/brownieddl.jpg</imgSmall>
 				<imgLarge>large/brownies/brownieddl.jpg</imgLarge>
-				<unidadEncarge>5</unidadEncarge>
 			</producto>
-			<producto id="402">
+			<producto>
 				<nombre>Brownie Meringato</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/brownies/browniemerengue.jpg</imgSmall>
 				<imgLarge>large/brownies/browniemerengue.jpg</imgLarge>
-				<unidadEncarge>5</unidadEncarge>
 			</producto>
-			<producto id="403">
+			<producto>
 				<nombre>Brownie Marmelliata</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/brownies/brownierojo.jpg</imgSmall>
 				<imgLarge>large/brownies/brownierojo.jpg</imgLarge>
-				<unidadEncarge>5</unidadEncarge>
 			</producto>
-			<producto id="404">
+			<producto>
 				<nombre>Limonata</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/brownies/cuadradodelimon.jpg</imgSmall>
 				<imgLarge>large/brownies/cuadradodelimon.jpg</imgLarge>
-				<unidadEncarge>5</unidadEncarge>
 			</producto>	
 	</categoria>
 	<categoria>
 			<nombre>Otros</nombre>
-			<producto id="501">
+			<producto>
 				<nombre>Medialunas</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/otros/medialunas.jpg</imgSmall>
 				<imgLarge>large/otros/medialunas.jpg</imgLarge>
-				<unidadEncarge>6</unidadEncarge>
 			</producto>
-			<producto id="502">
+			<producto>
 				<nombre>Muffins</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/otros/muffins.jpg</imgSmall>
 				<imgLarge>large/otros/muffins.jpg</imgLarge>
-				<unidadEncarge>6</unidadEncarge>
 			</producto>
-			<producto id="503">
+			<producto>
 				<nombre>Scons</nombre>
 				<precio>79</precio>
 				<peso>4</peso>
 				<imgSmall>small/otros/scons.jpg</imgSmall>
 				<imgLarge>large/otros/scons.jpg</imgLarge>
-				<unidadEncarge>10</unidadEncarge>
 			</producto>
 	</categoria>
 </productos>

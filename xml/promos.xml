@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE promos[
-	<!ELEMENT promos (promo)+>
-	<!ELEMENT promo (nombre, descripcion, precio, precio_sin_promo, images)>	
-	<!ELEMENT nombre (#PCDATA)>
-	<!ELEMENT descripcion (#PCDATA)>
-	<!ELEMENT precio (#PCDATA)>
-	<!ELEMENT precio_sin_promo (#PCDATA)>
-	<!ELEMENT images (img+)>
-	<!ELEMENT img (#PCDATA)>
-]>
+<!DOCTYPE promos SYSTEM "promos.dtd">
 <promos>
 	<promo>
 		<nombre>Combo 1</nombre>

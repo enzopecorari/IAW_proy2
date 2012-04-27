@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!ELEMENT productos (categoria)+>
+	<!ELEMENT categoria (nombre, producto+)>	
+	<!ELEMENT producto (nombre, precio, peso, imgSmall, imgLarge)>
+	<!ELEMENT nombre (#PCDATA)>
+	<!ELEMENT precio (#PCDATA)>
+	<!ELEMENT peso (#PCDATA)>
+	<!ELEMENT imgSmall (#PCDATA)>
+	<!ELEMENT imgLarge (#PCDATA)>

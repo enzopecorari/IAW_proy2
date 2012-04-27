@@ -6,9 +6,10 @@
         
 
         <title>Pasteleria</title>
-        <link rel="stylesheet" href="css/jquery.mobile-1.0.1.min.css" />
-        <link rel="stylesheet" href="css/main.css" /> 
-        
+        <link rel="stylesheet" title="mobile" href="css/jquery.mobile-1.0.1.min.css" />
+        <link rel="stylesheet" title="main" href="css/main.css" /> 
+        <link title="css1" href="css/style1.css" rel="stylesheet" type="text/css">
+        <link title="css2" href="css/style2.css" rel="stylesheet" type="text/css">
         <script src="js/lib/jquery-1.7.1.min.js" type="text/javascript"></script>
         <script src="js/lib/jquery.mobile-1.1.0-rc.1.min.js" type="text/javascript"></script>
         <script src="js/lib/loadXML.js" type="text/javascript"></script>
@@ -31,7 +32,9 @@
     	<!--HOME-->
     	<div data-role="page" id="home"> 
             <div data-role="header" data-id="menu" data-position="fixed" data-theme="">
-                NOMBRE- LOGO - Cambio estilos
+
+                <div id="headerImg"> NOMBRE- LOGO <a href='#' onclick="cambiarHojaDeEstilos('css1');">Estilo 1</a><a href='#' onclick="cambiarHojaDeEstilos('css2');">Estilo 2</a></div>
+
                 <div data-role="navbar">
 					<ul>
 						<li><a href="#home" class="ui-btn-active ui-state-persist">Home</a></li>
@@ -52,15 +55,15 @@
    					***		info util<br/>
    					**<br/>
    					*</div>
-               				
+
                <div id="promociones">
-               		<h3>Pomociones</h3>
+               	
                		<span id="tittleProm"></span>
+               		<a data-role="button" id="nextPromo" data-inline="true" >Next</a>
 	    			<span id="descProm"></span>
     				<span id="precioProm"></span>
     				<div id="imgProm"></div>
-    				<a data-role="button" id="nextPromo" data-inline="true">Next</a>
-
+    				
                </div>					
             
             </div>
@@ -71,8 +74,10 @@
             
         <!--PRODUCTOS-->
         <div data-role="page" id="productos"> 
-             <div data-role="header" data-id="menu" data-position="fixed" data-theme="b">
-                NOMBRE- LOGO - Cambio estilos
+             <div data-role="header" data-id="menu" data-position="fixed" data-theme="a">
+
+                <div id="headerImg"> NOMBRE- LOGO <a href='#' onclick="cambiarHojaDeEstilos('css1');">Estilo 1</a><a href='#' onclick="cambiarHojaDeEstilos('css2');">Estilo 2</a></div>
+
                 <div data-role="navbar">
 					<ul>
 						<li><a href="#home" data-transition="slide">Home</a></li>
@@ -118,8 +123,10 @@
         
         <!--PEDIDO-->
         <div data-role="page" id="pedido"> 
-             <div data-role="header" data-id="menu" data-position="fixed" data-theme="b">
-                NOMBRE- LOGO - Cambio estilos
+             <div data-role="header" data-id="menu" data-position="fixed" data-theme="a">
+
+                <div id="headerImg"> NOMBRE- LOGO <a href='#' onclick="cambiarHojaDeEstilos('css1');">Estilo 1</a><a href='#' onclick="cambiarHojaDeEstilos('css2');">Estilo 2</a></div>
+
                 <div data-role="navbar">
 					<ul>
 						<li><a href="#home" data-transition="slide">Home</a></li>

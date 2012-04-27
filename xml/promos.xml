@@ -12,11 +12,11 @@
 <promos>
 	<promo>
 		<nombre>Combo 1</nombre>
-		<descripcion>LLevás 3 Cheese Cake pagás solo 2!</descripcion>
+		<descripcion>LLevás 3 Fantasia Cake pagás solo 2!</descripcion>
 		<precio>158</precio>
 		<precio_sin_promo>237</precio_sin_promo>
 		<images>
-			<img>small/tortas/cheescake.jpg</img>
+			<img>small/tortas/fantasia.jpg</img>
 		</images>
 	</promo>
 	<promo>

@@ -6,7 +6,7 @@ $(document).ready(function() {
 	crearPromos();
 	cargarPromos();
 	$('#nextPromo').click(cargarPromos)
-	$('#pedirPromo').click(agregarPromoPedido);
+	$('#pedirPromo').click(crearDialogoPromo);
 	actualizarPedido(true);
 	$('#encargar').click(encargarPedido);
 	$('#clear').click(limpiarPedido);
@@ -97,11 +97,6 @@ function crearDialogo(event) {
 function okAgregar() {
 	var posProd = $('#productos .agregar .producto').attr("id").substring(1);
 	var cant =  Number($('#productos .agregar #selectCant').val());
-	//alert($('#productos .agregar .nombreProducto').html() + " #prod="+Number(pid)%100+" #cat="+Math.floor(Number(pid)/100)+" cant:"+cant);
-	//var numCat = Math.floor(Number(pid)/100);
-	//var numProd = Number(pid)%100;
-	
-	//var prod = categorias[numCat].getProducto(numProd);
 	Pedido.addProducto(posProd,cant);
 	almacenarPedido();
 	actualizarPedido(false);
@@ -113,98 +108,7 @@ function okAgregar() {
 
 
 
-
 /*PROMOCIONES*/
-var promoActual = -1;
-function cargarPromos(){
-
-	var xmlDoc = loadXMLDoc("xml/promos.xml");
-	var promos = xmlDoc.getElementsByTagName("promo");
-	promoActual = (promoActual +1) %promos.length;
-
-	$("#tittleProm").text(promos[promoActual].childNodes[1].firstChild.nodeValue);
-	$("#descProm").text(promos[promoActual].childNodes[3].firstChild.nodeValue);
-	$("#precioProm").text(promos[promoActual].childNodes[5].firstChild.nodeValue);
-	$("#imgProm").html("");
-	for(j = 1; j <promos[promoActual].childNodes[9].childNodes.length;j = j + 2)
-		$("#imgProm").append("<img src='img/"+promos[promoActual].childNodes[9].childNodes[j].firstChild.nodeValue+"' alt='imagen promo'/>");
-
-}
-
-
-
-/*PEDIDO*/
-function actualizarPedido(almacenado) {
-	if (almacenado && localStorage.getItem('pedidoIAW'))
-	{ 	
-		pedidoSerialized = localStorage.getItem('pedidoIAW');
-		Pedido.data = JSON.parse(pedidoSerialized);
-	}
-	var html = "";
-	var lista = $('#productosPedido');
-	for (i=0; i<Pedido.data.productos.length;i++) {
-		var posProd = Pedido.data.productos[i];
-		if (posProd >=0) {
-			var numCat = Math.floor(Number(posProd)/100);
-			var numProd = Number(posProd)%100;
-			var prod = categorias[numCat].getProducto(numProd);
-			var cant = Pedido.data.productosCant[i];
-			html += "<li class='item' id=li"+i+"> <img src='img/"+prod.getImgSmall()+"' alt='thumbnail'/>"+
-			"<h4 class='nombreProducto'>"+prod.getNombre()+" </h4>" + "<span class='destroy' onclick='quitarProducto(this);'></span>"+
-			"<p class='infoProducto'>Cantidad: "+cant+ "<span class='precioProducto'>$"+prod.getPrecio()*cant+" </span>" +
-			"<span class='pesoProducto'>"+prod.getPeso()*cant+"gr. </span>" +	"</p></li>";
-		}		
-	}
-	try {
-		lista.html(html);
-		//lista.listview();
-		lista.listview('refresh');
-	}
-	catch(e) {}
-    
-}
-
-function almacenarPedido() {
-	pedidoSerialized = JSON.stringify(Pedido.data);
-	alert(pedidoSerialized);
-	localStorage.setItem('pedidoIAW',pedidoSerialized);
-
-}
-
-function quitarProducto(elem) {
-	var li = elem.parentNode;
-	var index = Number($(li).attr("id").substring(2));
-	var padre = li.parentNode;
-	padre.removeChild(li);
-	Pedido.removeProducto(index);
-	almacenarPedido();
-	
-}
-
-function encargarPedido() {}
-
-function limpiarPedido() {
-	Pedido.clear();
-	actualizarPedido();
-	localStorage.removeItem('pedidoIAW');
-	
-}
-
-
-
-//CAMBIAR CSS
-function cambiarHojaDeEstilos(title) {
-    var i, a, main;
-    for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
-    	if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")){
-            a.disabled = true;
-            if(a.getAttribute("title") == title) a.disabled = false;
-            if(a.getAttribute("title") == "main") a.disabled = false;
-            if(a.getAttribute("title") == "mobile") a.disabled = false;
-        }
-    }
-    
-}
 
 var promociones = [];
 function crearPromos(){
@@ -235,8 +139,6 @@ function crearPromos(){
 	}
 }
 
-
-/*PROMOCIONES*/
 var promActual = -1;
 function cargarPromos(){
 
@@ -250,8 +152,175 @@ function cargarPromos(){
 		$("#imgProm").append("<img src='img/"+promociones[promActual].getProductos()[j].getImgSmall()+"' alt='imagen promo'/>");
 
 }
-function agregarPromoPedido() {	
-	Pedido.addPromocion(promActual);
-	actualizarPedido();
+
+function crearDialogoPromo(event) {
+	var dialog = $('#promocion .agregar');
+	var fondo = $('div#loading'); 
+	$('#promocion .agregar .contentConfirm').html(this.innerHTML);
+	
+	var promo = promociones[promActual];
+	var options = "";
+	for (i=1; i<=5;i++) {
+		if (i== 1)
+			options+= "<option value="+i+" selected>"+i+"</option>";
+		else
+			options+= "<option value="+i+">"+i+"</option>";
+	}
+	$('#promocion .agregar #selectCant').html(options).selectmenu('refresh');
+	
+	$('#promocion .agregar .cancel').click(function() {
+		fondo.hide();
+		dialog.hide();
+	});
+	
+	
+	fondo.show();
+	dialog.show();
+}
+
+
+function okAgregarPromo() {	
+	var cant =  Number($('#promocion .agregar #selectCant').val());
+	Pedido.addPromocion(promActual,cant);
+	
+	almacenarPedido();
+	actualizarPedido(false);
+	
+	$('div#loading').hide();
+	$('#promocion .agregar').hide();
+}
+
+
+
+/*PEDIDO*/
+function actualizarPedido(almacenado) {
+	if (almacenado && localStorage.getItem('pedidoIAW'))
+	{ 	
+		pedidoSerialized = localStorage.getItem('pedidoIAW');
+		Pedido.data = JSON.parse(pedidoSerialized);
+	}
+	
+	/*Productos*/
+	var html = "";
+	var lista = $('#productosPedido');
+	for (i=0; i<Pedido.data.productos.length;i++) {
+		var posProd = Pedido.data.productos[i];
+		if (posProd >=0) {
+			var numCat = Math.floor(Number(posProd)/100);
+			var numProd = Number(posProd)%100;
+			var prod = categorias[numCat].getProducto(numProd);
+			var cant = Pedido.data.productosCant[i];
+			var options= "";
+			var c= 0;
+			for (j=0; j<15;j++) {
+				c+= prod.getUnidEncargue();
+				if ((j+1)*prod.getUnidEncargue()== cant)
+					options+= "<option value="+c+" selected>"+c+"</option>";
+				else
+					options+= "<option value="+c+">"+c+"</option>";
+			}
+			
+			html += "<li class='item' id=li"+i+"> <img src='img/"+prod.getImgSmall()+"' alt='thumbnail'/>"+
+			"<h4 class='nombreProducto'>"+prod.getNombre()+" </h4>" + "<span class='destroy' onclick='quitarProducto(this);'></span>"+
+			"<span class='cantProd' data-role='fieldcontent'><label for='select-cant'>Cambiar cantidad:</label><select id='selectCant' data-mini='true' data-inline='true' onchange='cambiarCant(this)'>"+options+"</select></span>"+
+			"<p class='infoProducto'><span class='cantProducto'>Cantidad: "+cant+ "</span><span class='precioProducto'>$"+prod.getPrecio()*cant+" </span>" +
+			"<span class='pesoProducto'>"+prod.getPeso()*cant+"gr. </span>" +	"</p></li>";
+		}		
+		$('#productos .item #select-cant').selectmenu('refresh');
+	}
+	try {
+		lista.html(html);
+		//lista.listview();
+		lista.listview('refresh');
+	}
+	catch(e) {}
+	
+	/*Promos*/
+	var html = "";
+	var lista = $('#productosPedido');
+	for (i=0; i<Pedido.data.productos.length;i++) {
+		var posProd = Pedido.data.productos[i];
+		if (posProd >=0) {
+			var numCat = Math.floor(Number(posProd)/100);
+			var numProd = Number(posProd)%100;
+			var prod = categorias[numCat].getProducto(numProd);
+			var cant = Pedido.data.productosCant[i];
+			var options= "";
+			var c= 0;
+			for (j=0; j<15;j++) {
+				c+= prod.getUnidEncargue();
+				if ((j+1)*prod.getUnidEncargue()== cant)
+					options+= "<option value="+c+" selected>"+c+"</option>";
+				else
+					options+= "<option value="+c+">"+c+"</option>";
+			}
+			
+			html += "<li class='item' id=li"+i+"> <img src='img/"+prod.getImgSmall()+"' alt='thumbnail'/>"+
+			"<h4 class='nombreProducto'>"+prod.getNombre()+" </h4>" + "<span class='destroy' onclick='quitarProducto(this);'></span>"+
+			"<span class='cantProd' data-role='fieldcontent'><label for='select-cant'>Cambiar cantidad:</label><select id='selectCant' data-mini='true' data-inline='true' onchange='cambiarCant(this)'>"+options+"</select></span>"+
+			"<p class='infoProducto'><span class='cantProducto'>Cantidad: "+cant+ "</span><span class='precioProducto'>$"+prod.getPrecio()*cant+" </span>" +
+			"<span class='pesoProducto'>"+prod.getPeso()*cant+"gr. </span>" +	"</p></li>";
+		}		
+		$('#productos .item #select-cant').selectmenu('refresh');
+	}
+	try {
+		lista.html(html);
+		//lista.listview();
+		lista.listview('refresh');
+	}
+	catch(e) {}
+    
+}
+
+function almacenarPedido() {
+	pedidoSerialized = JSON.stringify(Pedido.data);
+	alert(pedidoSerialized);
+	localStorage.setItem('pedidoIAW',pedidoSerialized);
+
+}
+
+function quitarProducto(elem) {
+	var li = elem.parentNode;
+	var index = Number($(li).attr("id").substring(2));
+	var padre = li.parentNode;
+	padre.removeChild(li);
+	Pedido.removeProducto(index);
+	almacenarPedido();
 	
 }
+
+function cambiarCant(elem) {
+	var newCant = $(elem).val();
+	var li = elem.parentNode.parentNode;
+	var index = Number($(li).attr("id").substring(2));
+	$(li).find('.cantProducto').html("Cantidad: "+newCant);
+	Pedido.cambiarCantProducto(index,newCant);
+	almacenarPedido();
+}
+
+function encargarPedido() {}
+
+function limpiarPedido() {
+	Pedido.clear();
+	actualizarPedido();
+	localStorage.removeItem('pedidoIAW');
+	
+}
+
+
+
+//CAMBIAR CSS
+function cambiarHojaDeEstilos(title) {
+    var i, a, main;
+    for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
+    	if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")){
+            a.disabled = true;
+            if(a.getAttribute("title") == title) a.disabled = false;
+            if(a.getAttribute("title") == "main") a.disabled = false;
+            if(a.getAttribute("title") == "mobile") a.disabled = false;
+        }
+    }
+    
+}
+
+

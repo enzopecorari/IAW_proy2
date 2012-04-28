@@ -2,6 +2,16 @@
 <!DOCTYPE promos SYSTEM "promos.dtd">
 <promos>
 	<promo>
+		<nombre>Promoción Dia del Trabajador</nombre>
+		<descripcion>Disfrute en su día con las mejores medialunas: la docena 20% OFF!</descripcion>
+		<precio>15.75</precio>
+		<descuento>20</descuento>
+		<productos>
+			<IDproducto>p501</IDproducto>
+			<IDproducto>p501</IDproducto>
+		</productos>
+	</promo>
+	<promo>
 		<nombre>Promo invierno!</nombre>
 		<descripcion>El mejor remedio para el frío! Budín marmolado + Pan genoves por $39</descripcion>
 		<precio>39</precio>
@@ -17,6 +27,8 @@
 		<precio>158</precio>
 		<descuento>79</descuento>
 		<productos>
+			<IDproducto>p105</IDproducto>
+			<IDproducto>p105</IDproducto>
 			<IDproducto>p105</IDproducto>
 		</productos>
 	</promo>
@@ -36,17 +48,8 @@
 		<precio>79</precio>
 		<descuento>10</descuento>
 		<productos>
-			<IDproducto>p109</IDproducto>
+			<IDproducto>p201</IDproducto>
 			<IDproducto>p401</IDproducto>
-		</productos>
-	</promo>
-	<promo>
-		<nombre>Promoción Dia del Trabajador</nombre>
-		<descripcion>Disfrute en su día las mejores medialunas 20% OFF!</descripcion>
-		<precio>19.2</precio>
-		<descuento>4.8</descuento>
-		<productos>
-			<IDproducto>p501</IDproducto>
 		</productos>
 	</promo>
 </promos>

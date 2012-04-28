@@ -1,3 +1,18 @@
+body {
+	text-align: center;
+	background:#FFF5BA;
+}
+
+div.page {
+    margin:0 auto;
+    width: 70%;
+    max-width: 800px;
+    min-width: 400px;
+    
+  
+}
+
+
 div#loading {
    /*display:none;*/
     position:fixed;
@@ -149,7 +164,21 @@ div.agregar .buttonsConfirm a.cancel:active {
     background-position: 0 -20px;
 }
 
-#promociones {
+#productosPedido .cantProd {
+    display: none;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    text-align:center;
+    
+}
+
+#productosPedido li:hover .cantProd {
+    display: block;
+}
+
+
+#promocion {
 	text-align:center;
 	padding: 10px 10px 10px 10px;
     position: fixed;

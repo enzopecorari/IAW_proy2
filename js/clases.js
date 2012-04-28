@@ -84,33 +84,45 @@ var Pedido = {
 		}
 		if (esta) {
 			--i;
-			alert("ya est�. vieja cant: "+this.data.productosCant[i]);
 			this.data.productosCant[i]+=_cant;
-			alert("nueva cant: "+this.data.productosCant[i]);
 		}
 		else {
-			this.data.productos[i] = _prod; this.data.productosCant[i] = _cant; 
+			this.data.productos[i] = _prod;
+			this.data.productosCant[i] = _cant; 
 		}
 		return i;
 	},
-	addPromocion: function(_promo) { 
+	addPromocion: function(_promo,_cant) { 
 		var esta = false;
 		for (i=0; i<this.data.promociones.length &&!esta;i++)  {
 			esta = this.data.promociones[i] === _promo;
 		}
-		if (!esta) {
-			this.data.promociones[this.data.promociones.length] = _promo;
+		if (esta) {
+			--i;
+			this.data.promocionesCant[i]+=_cant;
 		}
-		else
-			alert ("la promo ya est�, no se vuelve a agregar");
+		else {
+			this.data.promociones[i] = _promo;
+			this.data.promocionesCant[i]=_cant;
+		}
+
 	},
 	removeProducto: function(index){
-		alert("a borrar:"+this.data.productos[index]+" . cant: "+this.data.productosCant[index]);
 		this.data.productos[index] = -1;
 		this.data.productosCant[index] =-1;
 		
 	},
-	//removePromocion
+	cambiarCantProducto: function(index,cant) {
+		this.data.productosCant[index] =cant;
+	},
+	removePromocion: function(index){
+		this.data.promocion[index] = -1;
+		this.data.promocionCant[index] =-1;
+		
+	},
+	cambiarCantPromocion: function(index,cant) {
+		this.data.promocionCant[index] =cant;
+	},
 	clear: function() {
 		this.data.productos = [];
 		this.data.productosCant = [];

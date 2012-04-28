@@ -30,7 +30,7 @@
         </div>
     	
     	<!--HOME-->
-    	<div data-role="page" id="home"> 
+    	<div class="page" data-role="page" id="home"> 
             <div data-role="header" data-id="menu" data-position="fixed" data-theme="">
 
                 <div id="headerImg"> NOMBRE- LOGO <a href='#' onclick="cambiarHojaDeEstilos('css1');">Estilo 1</a><a href='#' onclick="cambiarHojaDeEstilos('css2');">Estilo 2</a></div>
@@ -56,13 +56,35 @@
    					**<br/>
    					*</div>
 
-               <div id="promociones">
+               <div id="promocion">
                		<a class="pedirPromo" id="pedirPromo" title="Encargar Promoción" ></a>
                		<span id="tittleProm"></span>
                		<a class="nextPromo" id="nextPromo" title="Proxima Promoción" ></a>
 	    			<span id="descProm"></span>
     				<span id="precioProm"></span>
     				<div id="imgProm"></div>
+    				
+    				
+    				<!--Dialogo: confirmacion para agregar al pedido -->
+        
+			        <div class='agregar'>
+			            <div class="textConfirm">
+			                <h3>Agregar al pedido...</h3>
+			                <div class="contentConfirm">
+									
+			                </div>
+			                <label for="selectCant">Cantidad:</label>
+			               	<select id="selectCant" data-mini="true" data-inline="true">
+		   						
+							</select> 
+							
+			    		</div> 
+			            <div class="buttonsConfirm">
+			                <a class="ok" data-role="button" data-theme="b" data-inline="true" onclick="okAgregarPromo();">Agregar</a>
+			                <a class="cancel" data-role="button" data-theme="a" data-inline="true" >Cancel</a>
+			                        
+			            </div> 
+	        		</div>
     				
                </div>					
             
@@ -73,7 +95,7 @@
         </div> <!-- /home -->
             
         <!--PRODUCTOS-->
-        <div data-role="page" id="productos"> 
+        <div class="page" data-role="page" id="productos"> 
              <div data-role="header" data-id="menu" data-position="fixed" data-theme="a">
 
                 <div id="headerImg"> NOMBRE- LOGO <a href='#' onclick="cambiarHojaDeEstilos('css1');">Estilo 1</a><a href='#' onclick="cambiarHojaDeEstilos('css2');">Estilo 2</a></div>
@@ -125,7 +147,7 @@
         
         
         <!--PEDIDO-->
-        <div data-role="page" id="pedido"> 
+        <div class="page" data-role="page" id="pedido"> 
              <div data-role="header" data-id="menu" data-position="fixed" data-theme="a">
 
                 <div id="headerImg"> NOMBRE- LOGO <a href='#' onclick="cambiarHojaDeEstilos('css1');">Estilo 1</a><a href='#' onclick="cambiarHojaDeEstilos('css2');">Estilo 2</a></div>

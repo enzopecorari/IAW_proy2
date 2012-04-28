@@ -130,3 +130,20 @@ div.agregar .buttonsConfirm a.cancel:active {
 #listaCat .producto:active {
 	background: rgba(224,224,224,0.8);
 }
+
+#productosPedido .destroy {
+    background: url("images/destroy.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    right: 5px;
+    top: 20px;
+    width: 20px;
+}
+
+#productosPedido li:hover .destroy {
+    display: block;
+}
+#productosPedido .destroy:hover {
+    background-position: 0 -20px;
+}

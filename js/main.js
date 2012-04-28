@@ -115,11 +115,13 @@ function actualizarPedido() {
 	for (i=0; i<Pedido.productos.length;i++) {
 		var prod = Pedido.productos[i];
 		var cant = Pedido.productosCant[i];
-		lista += "<li class='item'><div class='producto'>" + "<span class='nombreProducto'>"+prod.getNombre()+" </span>" +
-		"<span class='cantidad'>Cantidad: "+cant+" </span>" + "<span class='precioProducto'>$"+prod.getPrecio()*cant+" </span>" +
-		"<span class='pesoProducto'>"+prod.getPeso()*cant+"gr. </span>" +	"</div></li>"; 
+		lista += "<li class='item'> <img src='img/"+prod.getImgSmall()+"' alt='thumbnail'/>"+
+		"<h4 class='nombreProducto'>"+prod.getNombre()+" </h4>" + "<span class='destroy'></span>"+
+		"<p class='infoProducto'>Cantidad: "+cant+ "<span class='precioProducto'>$"+prod.getPrecio()*cant+" </span>" +
+		"<span class='pesoProducto'>"+prod.getPeso()*cant+"gr. </span>" +	"</p></li>"; 
 	}
-	$('#listaPedido').html(lista);
+	$('#productosPedido').html(lista).listview('refresh');
+    
 }
 
 //CAMBIAR CSS
@@ -133,4 +135,5 @@ function cambiarHojaDeEstilos(title) {
             if(a.getAttribute("title") == "mobile") a.disabled = false;
         }
     }
+    
 }

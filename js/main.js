@@ -1,22 +1,22 @@
 
 $(document).ready(function() { 
-	
+
+
+	cargarProductos();
+	crearPromos();
 	cargarPromos();
 	$('#nextPromo').click(function() {
 		cargarPromos();
 	})
-
-	cargarProductos();
-	
 	$('div#loading').hide();
     $('#imgLoading').hide();
 })
 
 /*PRODUCTOS*/
-
+var productos = [];
 var categorias = [];
 function cargarProductos(){
-
+	
 	var xmlDoc = loadXMLDoc("xml/productos.xml");
 	var prods = xmlDoc.getElementsByTagName("categoria");
 	var div = $('#listaCat');
@@ -36,8 +36,10 @@ function cargarProductos(){
 			_imgS = prod.childNodes[7].firstChild.nodeValue;
 			_imgL = prod.childNodes[9].firstChild.nodeValue;
 		//	_unidEncargue = prod.childNodes[11].firstChild.nodeValue;
-			
-			produc = new Producto(_nombre,_precio,_peso,_imgS,_imgL,nomCat);
+
+			_id = prod.attributes[0].nodeValue;
+			produc = new Producto(_nombre,_precio,_peso,_imgS,_imgL,nomCat, _id);
+			productos[productos.length] = produc;
 			id= cat.getCantidad() + 100*categorias.length;
 			cat.addProducto(produc);
 			prodsCat += "<div class='item'><div class='producto' id=p"+id+">" + "<span class='nombreProducto'>"+_nombre+" </span>" +
@@ -90,24 +92,6 @@ function okAgregar() {
 	
 }
 
-/*PROMOCIONES*/
-var promoActual = -1;
-function cargarPromos(){
-
-	var xmlDoc = loadXMLDoc("xml/promos.xml");
-	var promos = xmlDoc.getElementsByTagName("promo");
-	promoActual = (promoActual +1) %promos.length;
-
-	$("#tittleProm").text(promos[promoActual].childNodes[1].firstChild.nodeValue);
-	$("#descProm").text(promos[promoActual].childNodes[3].firstChild.nodeValue);
-	$("#precioProm").text(promos[promoActual].childNodes[5].firstChild.nodeValue);
-	$("#imgProm").html("");
-	for(j = 1; j <promos[promoActual].childNodes[9].childNodes.length;j = j + 2)
-		$("#imgProm").append("<img src='img/"+promos[promoActual].childNodes[9].childNodes[j].firstChild.nodeValue+"' alt='imagen promo'/>");
-
-}
-
-
 
 /*PEDIDO*/
 function actualizarPedido() {
@@ -136,4 +120,49 @@ function cambiarHojaDeEstilos(title) {
         }
     }
     
+}
+
+var promociones = [];
+function crearPromos(){
+
+	var xmlDoc = loadXMLDoc("xml/promos.xml");
+	var promos = xmlDoc.getElementsByTagName("promo");
+	var xmlDoc = loadXMLDoc("xml/productos.xml");
+	var prods = xmlDoc.getElementsByTagName("categoria");
+	
+	
+	for (promoActual = 0; promoActual < promos.length; promoActual++){
+		var nombre = promos[promoActual].childNodes[1].firstChild.nodeValue;
+		var descrip = promos[promoActual].childNodes[3].firstChild.nodeValue;
+		var precio = promos[promoActual].childNodes[5].firstChild.nodeValue;
+		var descuento = promos[promoActual].childNodes[7].firstChild.nodeValue;
+		var promo = new Promocion (nombre, descrip, precio, descuento)
+		for(j = 1; j <promos[promoActual].childNodes[9].childNodes.length;j = j + 2){
+			var _id = promos[promoActual].childNodes[9].childNodes[j].firstChild.nodeValue;
+			var prod;
+	    	for (i=0;i<productos.length;i++){
+	    		if (productos[i].getId()==_id){
+	    			prod = productos[i];
+	    			promo.addProducto(prod);
+	    		}    			
+	    	}
+		}
+		promociones[promociones.length] = promo;
+	}
+}
+
+
+/*PROMOCIONES*/
+var promActual = -1;
+function cargarPromos(){
+
+	promActual = (promActual +1) %promociones.length;
+
+	$("#tittleProm").text(promociones[promActual].getNombre);
+	$("#descProm").text(promociones[promActual].getDescripcion);
+	$("#precioProm").text(promociones[promActual].getPrecio);
+	$("#imgProm").html("");
+	for(j = 0; j <promociones[promActual].getProductos().length;j++)
+		$("#imgProm").append("<img src='img/"+promociones[promActual].getProductos()[j].getImgSmall()+"' alt='imagen promo'/>");
+
 }

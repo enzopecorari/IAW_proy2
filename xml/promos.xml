@@ -7,7 +7,7 @@
 		<precio>158</precio>
 		<descuento>79</descuento>
 		<productos>
-			<IDproducto>105</IDproducto>
+			<IDproducto>p105</IDproducto>
 		</productos>
 	</promo>
 	<promo>
@@ -16,8 +16,8 @@
 		<precio>58</precio>
 		<descuento>12</descuento>
 		<productos>
-			<IDproducto>109</IDproducto>
-			<IDproducto>501</IDproducto>
+			<IDproducto>p109</IDproducto>
+			<IDproducto>p501</IDproducto>
 		</productos>
 	</promo>
 	<promo>
@@ -26,8 +26,8 @@
 		<precio>79</precio>
 		<descuento>10</descuento>
 		<productos>
-			<IDproducto>109</IDproducto>
-			<IDproducto>401</IDproducto>
+			<IDproducto>p109</IDproducto>
+			<IDproducto>p401</IDproducto>
 		</productos>
 	</promo>
 	<promo>
@@ -36,7 +36,7 @@
 		<precio>19.2</precio>
 		<descuento>4.8</descuento>
 		<productos>
-			<IDproducto>501</IDproducto>
+			<IDproducto>p501</IDproducto>
 		</productos>
 	</promo>
 		<promo>
@@ -45,8 +45,8 @@
 		<precio>39</precio>
 		<descuento>13</descuento>
 		<productos>
-			<IDproducto>303</IDproducto>
-			<IDproducto>306</IDproducto>
+			<IDproducto>p303</IDproducto>
+			<IDproducto>p306</IDproducto>
 		</productos>
 	</promo>
 </promos>

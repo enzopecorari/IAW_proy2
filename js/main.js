@@ -1,24 +1,26 @@
 
 $(document).ready(function() { 
-	
+
+
+	cargarProductos();
+	crearPromos();
 	cargarPromos();
 	$('#nextPromo').click(function() {
 		cargarPromos();
 	})
-
-	cargarProductos();
+	$('#pedirPromo').click(function() {
+		agregarPromoPedido();
+	});
 	actualizarPedido(true);
-		
-	
 	$('div#loading').hide();
     $('#imgLoading').hide();
 });
 
 /*PRODUCTOS*/
-
+var productos = [];
 var categorias = [];
 function cargarProductos(){
-
+	
 	var xmlDoc = loadXMLDoc("xml/productos.xml");
 	var prods = xmlDoc.getElementsByTagName("categoria");
 	var div = $('#listaCat');
@@ -38,8 +40,10 @@ function cargarProductos(){
 			_imgS = prod.childNodes[7].firstChild.nodeValue;
 			_imgL = prod.childNodes[9].firstChild.nodeValue;
 		//	_unidEncargue = prod.childNodes[11].firstChild.nodeValue;
-			
-			produc = new Producto(_nombre,_precio,_peso,_imgS,_imgL,nomCat);
+
+			_id = prod.attributes[0].nodeValue;
+			produc = new Producto(_nombre,_precio,_peso,_imgS,_imgL,nomCat, _id);
+			productos[productos.length] = produc;
 			id= cat.getCantidad() + 100*categorias.length;
 			cat.addProducto(produc);
 			prodsCat += "<div class='item'><div class='producto' id=p"+id+">" + "<span class='nombreProducto'>"+_nombre+" </span>" +
@@ -78,14 +82,14 @@ function crearDialogo(event) {
 }
 
 function okAgregar() {
-	var pid = $('#productos .agregar .producto').attr("id").substring(1);
+	var posProd = $('#productos .agregar .producto').attr("id").substring(1);
 	var cant =  Number($('#productos .agregar #cant').val());
 	//alert($('#productos .agregar .nombreProducto').html() + " #prod="+Number(pid)%100+" #cat="+Math.floor(Number(pid)/100)+" cant:"+cant);
 	//var numCat = Math.floor(Number(pid)/100);
 	//var numProd = Number(pid)%100;
 	
 	//var prod = categorias[numCat].getProducto(numProd);
-	var pos = Pedido.addProducto(pid,cant);
+	Pedido.addProducto(posProd,cant);
 	almacenarPedido();
 	actualizarPedido(false);
 	
@@ -94,13 +98,8 @@ function okAgregar() {
 	
 }
 
-function almacenarProducto(pos,prod) {
-	productoSerialized = JSON.stringify(prod);
-	
-	localStorage.setItem('pedidoIAW'+pos,pedidoSerialized);
-	almacenarPedido();
-	
-}
+
+
 
 /*PROMOCIONES*/
 var promoActual = -1;
@@ -125,27 +124,32 @@ function cargarPromos(){
 function actualizarPedido(almacenado) {
 	if (almacenado && localStorage['pedidoIAW'])
 	{ 	
-	//	pedidoSerialized = localStorage['pedidoIAW'];
-	//	Pedido = JSON.parse(pedidoSerialized);
+		pedidoSerialized = localStorage['pedidoIAW'];
+		Pedido.data = JSON.parse(pedidoSerialized);
 	}
 	var html = "";
 	var lista = $('#productosPedido');
-	for (i=0; i<Pedido.productos.length;i++) {
-		var prod = Pedido.productos[i];
-		var cant = Pedido.productosCant[i];
+	for (i=0; i<Pedido.data.productos.length;i++) {
+		var posProd = Pedido.data.productos[i];
+		var numCat = Math.floor(Number(posProd)/100);
+		var numProd = Number(posProd)%100;
+		var prod = categorias[numCat].getProducto(numProd);
+		var cant = Pedido.data.productosCant[i];
 		html += "<li class='item'> <img src='img/"+prod.getImgSmall()+"' alt='thumbnail'/>"+
 		"<h4 class='nombreProducto'>"+prod.getNombre()+" </h4>" + "<span class='destroy' onclick='quitarProducto(this);'></span>"+
 		"<p class='infoProducto'>Cantidad: "+cant+ "<span class='precioProducto'>$"+prod.getPrecio()*cant+" </span>" +
 		"<span class='pesoProducto'>"+prod.getPeso()*cant+"gr. </span>" +	"</p></li>"; 
 	}
-	//lista.listview();
-	lista.html(html);//.listview('refresh');
+	try {
+		lista.listview();
+		lista.html(html).listview('refresh');
+	}
+	catch(e) {}
     
 }
 
 function almacenarPedido() {
-	alert(Pedido);
-	pedidoSerialized = JSON.stringify(Pedido);
+	pedidoSerialized = JSON.stringify(Pedido.data);
 	alert(pedidoSerialized);
 	localStorage.setItem('pedidoIAW',pedidoSerialized);
 
@@ -170,4 +174,54 @@ function cambiarHojaDeEstilos(title) {
         }
     }
     
+}
+
+var promociones = [];
+function crearPromos(){
+
+	var xmlDoc = loadXMLDoc("xml/promos.xml");
+	var promos = xmlDoc.getElementsByTagName("promo");
+	var xmlDoc = loadXMLDoc("xml/productos.xml");
+	var prods = xmlDoc.getElementsByTagName("categoria");
+	
+	
+	for (promoActual = 0; promoActual < promos.length; promoActual++){
+		var nombre = promos[promoActual].childNodes[1].firstChild.nodeValue;
+		var descrip = promos[promoActual].childNodes[3].firstChild.nodeValue;
+		var precio = promos[promoActual].childNodes[5].firstChild.nodeValue;
+		var descuento = promos[promoActual].childNodes[7].firstChild.nodeValue;
+		var promo = new Promocion (nombre, descrip, precio, descuento)
+		for(j = 1; j <promos[promoActual].childNodes[9].childNodes.length;j = j + 2){
+			var _id = promos[promoActual].childNodes[9].childNodes[j].firstChild.nodeValue;
+			var prod;
+	    	for (i=0;i<productos.length;i++){
+	    		if (productos[i].getId()==_id){
+	    			prod = productos[i];
+	    			promo.addProducto(prod);
+	    		}    			
+	    	}
+		}
+		promociones[promociones.length] = promo;
+	}
+}
+
+
+/*PROMOCIONES*/
+var promActual = -1;
+function cargarPromos(){
+
+	promActual = (promActual +1) %promociones.length;
+
+	$("#tittleProm").text(promociones[promActual].getNombre);
+	$("#descProm").text(promociones[promActual].getDescripcion);
+	$("#precioProm").text(promociones[promActual].getPrecio);
+	$("#imgProm").html("");
+	for(j = 0; j <promociones[promActual].getProductos().length;j++)
+		$("#imgProm").append("<img src='img/"+promociones[promActual].getProductos()[j].getImgSmall()+"' alt='imagen promo'/>");
+
+}
+function agregarPromoPedido() {	
+	Pedido.addPromocion(promActual);
+	actualizarPedido();
+	
 }

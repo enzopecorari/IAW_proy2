@@ -148,3 +148,70 @@ div.agregar .buttonsConfirm a.cancel:active {
 #productosPedido .destroy:hover {
     background-position: 0 -20px;
 }
+
+#promociones {
+	text-align:center;
+	padding: 10px 10px 10px 10px;
+    position: fixed;
+    left: 40%;
+    top: 70%;
+    width:600px;
+    height:300px;
+    margin-left: -200px;
+    margin-top: -100px;
+    z-index:99999;
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    -moz-box-background-clip: padding-box;
+    -webkit-box-background-clip: padding-box;
+    background-clip: padding-box;
+    -moz-box-border-radius: .3em;
+    -webkit-box-border-radius: .3em;
+    border-radius: .3em;
+    background: rgba(240,239,200,0.85);
+}
+#nextPromo {
+	
+    cursor:pointer;
+    position: absolute;
+    right:20px;
+    top: 10px;
+    width: 41px;
+    height: 40px;
+    background: url(../img/nextP.png) no-repeat;
+
+}
+#pedirPromo {
+	
+    cursor:pointer;
+    position: absolute;
+    left:20px;
+    top: 10px;
+    width: 54px;
+    height: 35px;
+    background: url(../img/cartP.gif) no-repeat;
+
+}
+#tittleProm {
+	margin-left: 0px;
+	padding: 50px 0px 0px 0px;
+	display: inline;
+	font-style:italic;
+	font-family:arial, "courier new", impact;
+	font-size:30px;
+}
+#descProm {
+	padding: 10px 30px 5px 40px;
+	display: block;
+	font-style:italic;
+	font-family:arial, "courier new", impact;
+	font-size:20px;
+}
+#precioProm {
+	display: none;
+}
+#imgProm {
+	padding: 20px 0px 0px 0px;
+	display: block;
+}

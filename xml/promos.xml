@@ -2,6 +2,16 @@
 <!DOCTYPE promos SYSTEM "promos.dtd">
 <promos>
 	<promo>
+		<nombre>Promo invierno!</nombre>
+		<descripcion>El mejor remedio para el frío! Budín marmolado + Pan genoves por $39</descripcion>
+		<precio>39</precio>
+		<descuento>13</descuento>
+		<productos>
+			<IDproducto>p303</IDproducto>
+			<IDproducto>p306</IDproducto>
+		</productos>
+	</promo>
+	<promo>		
 		<nombre>Combo 1</nombre>
 		<descripcion>LLevás 3 Fantasia Cake pagás solo 2!</descripcion>
 		<precio>158</precio>
@@ -31,22 +41,12 @@
 		</productos>
 	</promo>
 	<promo>
-		<nombre>Promoción Dia del Trabador</nombre>
+		<nombre>Promoción Dia del Trabajador</nombre>
 		<descripcion>Disfrute en su día las mejores medialunas 20% OFF!</descripcion>
 		<precio>19.2</precio>
 		<descuento>4.8</descuento>
 		<productos>
 			<IDproducto>p501</IDproducto>
-		</productos>
-	</promo>
-		<promo>
-		<nombre>Promo invierno!</nombre>
-		<descripcion>El mejor remedio para el frío! Budín marmolado + Pan genoves por $39</descripcion>
-		<precio>39</precio>
-		<descuento>13</descuento>
-		<productos>
-			<IDproducto>p303</IDproducto>
-			<IDproducto>p306</IDproducto>
 		</productos>
 	</promo>
 </promos>

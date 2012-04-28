@@ -37,24 +37,30 @@ function Producto (_nombre, _precio, _peso, _imgSmall,_imgLarge, _categoria){
 
 /* Pedido: Singleton (solo hay un pedido en el sistema) */
 var Pedido = {
-	productos: [],
-	productosCant: [],
-	promociones: [],
-	precioTotal: 0,
+	data: {
+		productos: [],
+		productosCant: [],
+		promociones: [], 
+		productosCant: [],
+		precioTotal: 0,
+	},
+	
 	addProducto: function(_prod,_cant) { 
 		var esta = false;
+		var i;
 		for (i=0; i<this.productos.length &&!esta;i++)  {
-			esta = this.productos[i] === _prod;
+			esta = this.productos[i] == _prod;
 		}
 		if (esta) {
 			--i;
-			alert("ya está. vieja cant: "+this.productosCant[i]);
+			alert("ya estï¿½. vieja cant: "+this.productosCant[i]);
 			this.productosCant[i]+=_cant;
 			alert("nueva cant: "+this.productosCant[i]);
 		}
 		else {
-			this.productos[this.productos.length] = _prod; this.productosCant[this.productosCant.length] = _cant; 
+			this.productos[i] = _prod; this.productosCant[i] = _cant; 
 		}
+		return i;
 	},
 	addPromocion: function(_promo) { 
 		var esta = false;
@@ -65,7 +71,7 @@ var Pedido = {
 			this.promociones[this.promociones.length] = _promo;
 		}
 		else
-			alert ("la promo ya está, no se vuelve a agregar");
+			alert ("la promo ya estï¿½, no se vuelve a agregar");
 	}
 	//removeProducto
 	//removePromocion

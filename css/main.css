@@ -133,6 +133,7 @@ div.agregar .buttonsConfirm a.cancel:active {
 
 #productosPedido .destroy {
     background: url("images/destroy.png") no-repeat scroll 0 0 transparent;
+    display: none;
     cursor: pointer;
     height: 20px;
     position: absolute;

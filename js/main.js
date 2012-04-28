@@ -7,10 +7,12 @@ $(document).ready(function() {
 	})
 
 	cargarProductos();
+	actualizarPedido(true);
+		
 	
 	$('div#loading').hide();
     $('#imgLoading').hide();
-})
+});
 
 /*PRODUCTOS*/
 
@@ -79,14 +81,24 @@ function okAgregar() {
 	var pid = $('#productos .agregar .producto').attr("id").substring(1);
 	var cant =  Number($('#productos .agregar #cant').val());
 	//alert($('#productos .agregar .nombreProducto').html() + " #prod="+Number(pid)%100+" #cat="+Math.floor(Number(pid)/100)+" cant:"+cant);
-	var numCat = Math.floor(Number(pid)/100);
-	var numProd = Number(pid)%100;
+	//var numCat = Math.floor(Number(pid)/100);
+	//var numProd = Number(pid)%100;
 	
-	var prod = categorias[numCat].getProducto(numProd);
-	Pedido.addProducto(prod,cant);
-	actualizarPedido();
+	//var prod = categorias[numCat].getProducto(numProd);
+	var pos = Pedido.addProducto(pid,cant);
+	almacenarPedido();
+	actualizarPedido(false);
+	
 	$('div#loading').hide();
 	$('#productos .agregar').hide();
+	
+}
+
+function almacenarProducto(pos,prod) {
+	productoSerialized = JSON.stringify(prod);
+	
+	localStorage.setItem('pedidoIAW'+pos,pedidoSerialized);
+	almacenarPedido();
 	
 }
 
@@ -110,19 +122,41 @@ function cargarPromos(){
 
 
 /*PEDIDO*/
-function actualizarPedido() {
-	var lista = "";
+function actualizarPedido(almacenado) {
+	if (almacenado && localStorage['pedidoIAW'])
+	{ 	
+	//	pedidoSerialized = localStorage['pedidoIAW'];
+	//	Pedido = JSON.parse(pedidoSerialized);
+	}
+	var html = "";
+	var lista = $('#productosPedido');
 	for (i=0; i<Pedido.productos.length;i++) {
 		var prod = Pedido.productos[i];
 		var cant = Pedido.productosCant[i];
-		lista += "<li class='item'> <img src='img/"+prod.getImgSmall()+"' alt='thumbnail'/>"+
-		"<h4 class='nombreProducto'>"+prod.getNombre()+" </h4>" + "<span class='destroy'></span>"+
+		html += "<li class='item'> <img src='img/"+prod.getImgSmall()+"' alt='thumbnail'/>"+
+		"<h4 class='nombreProducto'>"+prod.getNombre()+" </h4>" + "<span class='destroy' onclick='quitarProducto(this);'></span>"+
 		"<p class='infoProducto'>Cantidad: "+cant+ "<span class='precioProducto'>$"+prod.getPrecio()*cant+" </span>" +
 		"<span class='pesoProducto'>"+prod.getPeso()*cant+"gr. </span>" +	"</p></li>"; 
 	}
-	$('#productosPedido').html(lista).listview('refresh');
+	//lista.listview();
+	lista.html(html);//.listview('refresh');
     
 }
+
+function almacenarPedido() {
+	alert(Pedido);
+	pedidoSerialized = JSON.stringify(Pedido);
+	alert(pedidoSerialized);
+	localStorage.setItem('pedidoIAW',pedidoSerialized);
+
+}
+
+function quitarProducto(elem) {
+	alert(elem.parentNode.tagName);
+	
+}
+
+
 
 //CAMBIAR CSS
 function cambiarHojaDeEstilos(title) {

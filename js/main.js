@@ -8,6 +8,9 @@ $(document).ready(function() {
 	$('#nextPromo').click(function() {
 		cargarPromos();
 	})
+	$('#pedirPromo').click(function() {
+		agregarPromoPedido();
+	})
 	$('div#loading').hide();
     $('#imgLoading').hide();
 })
@@ -165,4 +168,9 @@ function cargarPromos(){
 	for(j = 0; j <promociones[promActual].getProductos().length;j++)
 		$("#imgProm").append("<img src='img/"+promociones[promActual].getProductos()[j].getImgSmall()+"' alt='imagen promo'/>");
 
+}
+function agregarPromoPedido() {	
+	Pedido.addPromocion(promActual);
+	actualizarPedido();
+	
 }

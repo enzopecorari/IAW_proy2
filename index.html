@@ -57,12 +57,13 @@
    					*</div>
 
                <div id="promocion">
-               		<a class="pedirPromo" id="pedirPromo" title="Encargar Promoción" ></a>
-               		<span id="tittleProm"></span>
-               		<a class="nextPromo" id="nextPromo" title="Proxima Promoción" ></a>
-	    			<span id="descProm"></span>
-    				<span id="precioProm"></span>
-    				<div id="imgProm"></div>
+               		<a class="prevPromo" id="prevPromo" title="Promoci&oacute;n anterior" ></a>
+               		<span class="tittleProm"></span>
+               		<a class="nextPromo" id="nextPromo" title="Promoci&oacute;n siguiente" ></a>
+	    			<span class="descProm"></span>
+    				<div class="imgProm"></div>
+    				<span class="precioOrig"></span><span class="precioProm"></span>
+    				<a class="pedirPromo" id="pedirPromo" title="Agregar promoci&oacute;n al pedido..." ></a>
     				
     				
     				<!--Dialogo: confirmacion para agregar al pedido -->
@@ -70,13 +71,16 @@
 			        <div class='agregar'>
 			            <div class="textConfirm">
 			                <h3>Agregar al pedido...</h3>
-			                <div class="contentConfirm">
-									
-			                </div>
+			                <span class="tittleProm"></span>
+			                
 			                <label for="selectCant">Cantidad:</label>
-			               	<select id="selectCant" data-mini="true" data-inline="true">
+			               	<select id="selectCant" data-mini="true" data-inline="true" onchange="cambiarCantAgregarPromo(this)">
 		   						
 							</select> 
+							<div class="contentConfirm">
+									
+			                </div>
+							
 							
 			    		</div> 
 			            <div class="buttonsConfirm">
@@ -90,7 +94,7 @@
             
             </div>
             
-            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari &amp; Diego Schwindt - 2º proyecto de Ingeniería de Aplicaicones Web, UNS [1º cuatrim 2012]</div> 
+            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari &amp; Diego Schwindt - 2Âº proyecto de IngenierÃ­a de Aplicaicones Web, UNS [1Âº cuatrim 2012]</div> 
         
         </div> <!-- /home -->
             
@@ -117,7 +121,7 @@
             
             
             </div> 
-            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari &amp; Diego Schwindt - 2º proyecto de Ingeniería de Aplicaicones Web, UNS [1º cuatrim 2012]</div> 
+            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari &amp; Diego Schwindt - 2Âº proyecto de IngenierÃ­a de Aplicaicones Web, UNS [1Âº cuatrim 2012]</div> 
        
        		<!--Dialogo: confirmacion para agregar al pedido -->
         
@@ -190,7 +194,7 @@
             
             </div> <!-- /content --> 
         
-            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari &amp; Diego Schwindt - 2º proyecto de Ingeniería de Aplicaicones Web, UNS [1º cuatrim 2012]</div> 
+            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari &amp; Diego Schwindt - 2Âº proyecto de IngenierÃ­a de Aplicaicones Web, UNS [1Âº cuatrim 2012]</div> 
         </div> <!-- /pedido-->   
         
         

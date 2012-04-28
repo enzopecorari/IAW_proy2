@@ -88,7 +88,7 @@
 			<nombre>Tartas</nombre>
 			<producto id="p201">
 				<nombre>Lemonpie</nombre>
-				<precio>79</precio>
+				<precio>77</precio>
 				<peso>1</peso>
 				<imgSmall>small/tartas/lemonpie.jpg</imgSmall>
 				<imgLarge>large/tartas/lemonpie.jpg</imgLarge>

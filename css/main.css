@@ -181,13 +181,14 @@ div.agregar .buttonsConfirm a.cancel:active {
 #promocion {
 	text-align:center;
 	padding: 10px 10px 10px 10px;
-    position: fixed;
-    left: 40%;
-    top: 70%;
+    position: absolute;
+    top: 400px;
+    left: 50%;
+        
     width:600px;
     height:300px;
-    margin-left: -200px;
-    margin-top: -100px;
+    margin-left: -300px;
+    margin-top: -150px;
     z-index:99999;
     -moz-box-shadow: 0 1px 4px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3);
@@ -211,18 +212,32 @@ div.agregar .buttonsConfirm a.cancel:active {
     background: url(../img/nextP.png) no-repeat;
 
 }
-#pedirPromo {
+
+#prevPromo {
 	
     cursor:pointer;
     position: absolute;
     left:20px;
     top: 10px;
+    width: 41px;
+    height: 40px;
+    background: url(../img/nextP.png) no-repeat;
+
+}
+
+#pedirPromo {
+	
+    cursor:pointer;
+    position: absolute;
+    left:50%;
+    bottom: 10px;
     width: 54px;
+    margin-left: -27px;
     height: 35px;
     background: url(../img/cartP.gif) no-repeat;
 
 }
-#tittleProm {
+.tittleProm {
 	margin-left: 0px;
 	padding: 50px 0px 0px 0px;
 	display: inline;
@@ -230,17 +245,18 @@ div.agregar .buttonsConfirm a.cancel:active {
 	font-family:arial, "courier new", impact;
 	font-size:30px;
 }
-#descProm {
+.descProm {
 	padding: 10px 30px 5px 40px;
 	display: block;
 	font-style:italic;
 	font-family:arial, "courier new", impact;
 	font-size:20px;
 }
-#precioProm {
-	display: none;
+.precioProm {
 }
-#imgProm {
+.precioOrig {
+}
+.imgProm {
 	padding: 20px 0px 0px 0px;
 	display: block;
 }

@@ -3,53 +3,46 @@
 <promos>
 	<promo>
 		<nombre>Promoción Dia del Trabajador</nombre>
-		<descripcion>Disfrute en su día con las mejores medialunas: la docena 20% OFF!</descripcion>
-		<precio>15.75</precio>
-		<descuento>20</descuento>
+		<descripcion>Disfrute en su día con las mejores medialunas: la docena 25% OFF!</descripcion>
+		<descuento>25</descuento>
 		<productos>
-			<IDproducto>p501</IDproducto>
-			<IDproducto>p501</IDproducto>
+			<IDproducto cant="12">p501</IDproducto>
 		</productos>
 	</promo>
 	<promo>
 		<nombre>Promo invierno!</nombre>
 		<descripcion>El mejor remedio para el frío! Budín marmolado + Pan genoves por $39</descripcion>
-		<precio>39</precio>
-		<descuento>13</descuento>
+		<descuento>25</descuento>
 		<productos>
-			<IDproducto>p303</IDproducto>
-			<IDproducto>p306</IDproducto>
+			<IDproducto cant="1">p303</IDproducto>
+			<IDproducto cant="1">p306</IDproducto>
 		</productos>
 	</promo>
 	<promo>		
 		<nombre>Combo 1</nombre>
 		<descripcion>LLevás 3 Fantasia Cake pagás solo 2!</descripcion>
-		<precio>158</precio>
-		<descuento>79</descuento>
+		<descuento>33.3333333333333</descuento>
 		<productos>
-			<IDproducto>p105</IDproducto>
-			<IDproducto>p105</IDproducto>
-			<IDproducto>p105</IDproducto>
+			<IDproducto cant="3">p105</IDproducto>
+			
 		</productos>
 	</promo>
 	<promo>
 		<nombre>Combo 2</nombre>
-		<descripcion>LLevás una torta Rogel y una media docena de medialunas por solo $58!</descripcion>
-		<precio>58</precio>
-		<descuento>12</descuento>
+		<descripcion>LLevás una torta Rogel y una docena de muffins por solo $68!</descripcion>
+		<descuento>20</descuento>
 		<productos>
-			<IDproducto>p109</IDproducto>
-			<IDproducto>p501</IDproducto>
+			<IDproducto cant="1">p109</IDproducto>
+			<IDproducto cant="12">p502</IDproducto>
 		</productos>
 	</promo>
 	<promo>
 		<nombre>Combo 3</nombre>
-		<descripcion>Con la compra de un Lemon Pie, lleva 5 brownies gratis!</descripcion>
-		<precio>79</precio>
-		<descuento>10</descuento>
+		<descripcion>Con la compra de un Lemon Pie, lleva 5 brownies "Limonata" gratis!</descripcion>
+		<descuento>16</descuento>
 		<productos>
-			<IDproducto>p201</IDproducto>
-			<IDproducto>p401</IDproducto>
+			<IDproducto cant="1">p201</IDproducto>
+			<IDproducto cant="5">p404</IDproducto>
 		</productos>
 	</promo>
 </promos>

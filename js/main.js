@@ -5,13 +5,11 @@ $(document).ready(function() {
 	cargarProductos();
 	crearPromos();
 	cargarPromos();
-	$('#nextPromo').click(function() {
-		cargarPromos();
-	})
-	$('#pedirPromo').click(function() {
-		agregarPromoPedido();
-	});
+	$('#nextPromo').click(cargarPromos)
+	$('#pedirPromo').click(agregarPromoPedido);
 	actualizarPedido(true);
+	$('#encargar').click(encargarPedido);
+	$('#clear').click(limpiarPedido);
 	$('div#loading').hide();
     $('#imgLoading').hide();
 });
@@ -39,10 +37,10 @@ function cargarProductos(){
 			_peso = prod.childNodes[5].firstChild.nodeValue;
 			_imgS = prod.childNodes[7].firstChild.nodeValue;
 			_imgL = prod.childNodes[9].firstChild.nodeValue;
-		//	_unidEncargue = prod.childNodes[11].firstChild.nodeValue;
+			_unidEncargue = Number(prod.childNodes[11].firstChild.nodeValue);
 
 			_id = prod.attributes[0].nodeValue;
-			produc = new Producto(_nombre,_precio,_peso,_imgS,_imgL,nomCat, _id);
+			produc = new Producto(_nombre,_precio,_peso,_imgS,_imgL,nomCat, _id, _unidEncargue);
 			productos[productos.length] = produc;
 			id= cat.getCantidad() + 100*categorias.length;
 			cat.addProducto(produc);
@@ -70,6 +68,21 @@ function crearDialogo(event) {
 	var dialog = $('#productos .agregar');
 	var fondo = $('div#loading'); 
 	$('#productos .agregar .contentConfirm').html(this.innerHTML);
+	var posProd = $(this.firstChild).attr("id").substring(1);
+	var numCat = Math.floor(Number(posProd)/100);
+	var numProd = Number(posProd)%100;
+	var prod = categorias[numCat].getProducto(numProd);
+	var options = "";
+	var cant= 0;
+	
+	for (i=0; i<15;i++) {
+		cant+= prod.getUnidEncargue();
+		if (i== 0)
+			options+= "<option value="+cant+" selected>"+cant+"</option>";
+		else
+			options+= "<option value="+cant+">"+cant+"</option>";
+	}
+	$('#productos .agregar #selectCant').html(options).selectmenu('refresh');
 	
 	$('#productos .agregar .cancel').click(function() {
 		fondo.hide();
@@ -83,7 +96,7 @@ function crearDialogo(event) {
 
 function okAgregar() {
 	var posProd = $('#productos .agregar .producto').attr("id").substring(1);
-	var cant =  Number($('#productos .agregar #cant').val());
+	var cant =  Number($('#productos .agregar #selectCant').val());
 	//alert($('#productos .agregar .nombreProducto').html() + " #prod="+Number(pid)%100+" #cat="+Math.floor(Number(pid)/100)+" cant:"+cant);
 	//var numCat = Math.floor(Number(pid)/100);
 	//var numProd = Number(pid)%100;
@@ -122,27 +135,30 @@ function cargarPromos(){
 
 /*PEDIDO*/
 function actualizarPedido(almacenado) {
-	if (almacenado && localStorage['pedidoIAW'])
+	if (almacenado && localStorage.getItem('pedidoIAW'))
 	{ 	
-		pedidoSerialized = localStorage['pedidoIAW'];
+		pedidoSerialized = localStorage.getItem('pedidoIAW');
 		Pedido.data = JSON.parse(pedidoSerialized);
 	}
 	var html = "";
 	var lista = $('#productosPedido');
 	for (i=0; i<Pedido.data.productos.length;i++) {
 		var posProd = Pedido.data.productos[i];
-		var numCat = Math.floor(Number(posProd)/100);
-		var numProd = Number(posProd)%100;
-		var prod = categorias[numCat].getProducto(numProd);
-		var cant = Pedido.data.productosCant[i];
-		html += "<li class='item'> <img src='img/"+prod.getImgSmall()+"' alt='thumbnail'/>"+
-		"<h4 class='nombreProducto'>"+prod.getNombre()+" </h4>" + "<span class='destroy' onclick='quitarProducto(this);'></span>"+
-		"<p class='infoProducto'>Cantidad: "+cant+ "<span class='precioProducto'>$"+prod.getPrecio()*cant+" </span>" +
-		"<span class='pesoProducto'>"+prod.getPeso()*cant+"gr. </span>" +	"</p></li>"; 
+		if (posProd >=0) {
+			var numCat = Math.floor(Number(posProd)/100);
+			var numProd = Number(posProd)%100;
+			var prod = categorias[numCat].getProducto(numProd);
+			var cant = Pedido.data.productosCant[i];
+			html += "<li class='item' id=li"+i+"> <img src='img/"+prod.getImgSmall()+"' alt='thumbnail'/>"+
+			"<h4 class='nombreProducto'>"+prod.getNombre()+" </h4>" + "<span class='destroy' onclick='quitarProducto(this);'></span>"+
+			"<p class='infoProducto'>Cantidad: "+cant+ "<span class='precioProducto'>$"+prod.getPrecio()*cant+" </span>" +
+			"<span class='pesoProducto'>"+prod.getPeso()*cant+"gr. </span>" +	"</p></li>";
+		}		
 	}
 	try {
-		lista.listview();
-		lista.html(html).listview('refresh');
+		lista.html(html);
+		//lista.listview();
+		lista.listview('refresh');
 	}
 	catch(e) {}
     
@@ -156,7 +172,21 @@ function almacenarPedido() {
 }
 
 function quitarProducto(elem) {
-	alert(elem.parentNode.tagName);
+	var li = elem.parentNode;
+	var index = Number($(li).attr("id").substring(2));
+	var padre = li.parentNode;
+	padre.removeChild(li);
+	Pedido.removeProducto(index);
+	almacenarPedido();
+	
+}
+
+function encargarPedido() {}
+
+function limpiarPedido() {
+	Pedido.clear();
+	actualizarPedido();
+	localStorage.removeItem('pedidoIAW');
 	
 }
 

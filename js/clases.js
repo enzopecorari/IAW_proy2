@@ -12,7 +12,7 @@ function Categoria (_nombre){
 }
 
 /* Producto */
-function Producto (_nombre, _precio, _peso, _imgSmall,_imgLarge, _categoria, _id){ 
+function Producto (_nombre, _precio, _peso, _imgSmall,_imgLarge, _categoria, _id,_unidEncargue){ 
     var nombre = _nombre;
     var precio = _precio;
     var peso = _peso;
@@ -20,7 +20,7 @@ function Producto (_nombre, _precio, _peso, _imgSmall,_imgLarge, _categoria, _id
     var imgLarge = _imgLarge;
     var categ = _categoria;
     var id = _id;
-
+    var unEncargue = _unidEncargue;
     
     this.getNombre=function(){return  nombre;}
     this.setNombre = function(_nombre){ nombre = _nombre;} 
@@ -34,7 +34,9 @@ function Producto (_nombre, _precio, _peso, _imgSmall,_imgLarge, _categoria, _id
     this.getImgLarge = function(){return imgLarge;} 
     this.getCategoria = function() { return categ; }
     this.setId = function(_id){ id = _id;} 
-    this.getId = function(){return id;} 
+    this.getId = function(){return id;}
+    this.setUnidEncargue = function(_un){ unEncargue = _un;} 
+    this.getUnidEncargue = function(){return unEncargue;} 
     
 
 }
@@ -70,7 +72,8 @@ var Pedido = {
 		productosCant: [],
 		promociones: [], 
 		promocionesCant: [],
-		precioTotal: 0,
+		pesoTotal: 0,
+		precioTotal: 0
 	},
 	
 	addProducto: function(_prod,_cant) { 
@@ -100,10 +103,22 @@ var Pedido = {
 		}
 		else
 			alert ("la promo ya est�, no se vuelve a agregar");
-	}
-	//removeProducto
+	},
+	removeProducto: function(index){
+		alert("a borrar:"+this.data.productos[index]+" . cant: "+this.data.productosCant[index]);
+		this.data.productos[index] = -1;
+		this.data.productosCant[index] =-1;
+		
+	},
 	//removePromocion
-	//clear
+	clear: function() {
+		this.data.productos = [];
+		this.data.productosCant = [];
+		this.data.promociones = [];
+		this.data.promocionesCant = [];
+		this.data.pesoTotal = 0;
+		this.data.precioTotal = 0;
+	}
 	
 	
 		

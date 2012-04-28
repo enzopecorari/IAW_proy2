@@ -105,8 +105,11 @@
 	                <div class="contentConfirm">
 							
 	                </div>
-	                <label for="cant">Cantidad:</label>
-					<input type="text" id="cant" value="1" data-mini="true" />
+	                <label for="selectCant">Cantidad:</label>
+	               	<select id="selectCant" data-mini="true" data-inline="true">
+   						
+					</select> 
+					
 	    		</div> 
 	            <div class="buttonsConfirm">
 	                <a class="ok" data-role="button" data-theme="b" data-inline="true" onclick="okAgregar();">Agregar</a>
@@ -155,7 +158,10 @@
 				</div>
 				<div>
 					TOTAL: <span id="total"></span>
+					<a id="encargar" data-role="button" data-theme="a" data-inline="true" >Encargar pedido</a>
+					<a id="clear" data-role="button" data-theme="b" data-inline="true">Quitar todo</a> 
 				</div>
+				
 				
             
             

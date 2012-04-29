@@ -7,9 +7,10 @@
 
         <title>Pasteleria</title>
         <link rel="stylesheet" title="mobile" href="css/jquery.mobile-1.0.1.min.css" />
-        <link rel="stylesheet" href="css/main.css" /> 
-    <!--    <link title="css1" href="css/style1.css" rel="stylesheet" type="text/css">
-        <link title="css2" href="css/style2.css" rel="stylesheet" type="text/css"> -->
+        <link id="estilo0" rel="stylesheet" href="css/notloaded.css" />
+        <link id="estilo1" rel="stylesheet" href="css/style1.css" disabled/>
+        <link id="estilo2" rel="stylesheet" href="css/style2.css" disabled/> 
+    
         <script src="js/lib/jquery-1.7.1.min.js" type="text/javascript"></script>
         <script src="js/lib/jquery.mobile-1.1.0-rc.1.min.js" type="text/javascript"></script>
         <script src="js/lib/loadXML.js" type="text/javascript"></script>
@@ -26,28 +27,37 @@
     
     <body>
     	
-    	<div id="loading"></div>
+ 		<div id="loading"></div>
         <div id="imgLoading">
             <img width="55" height="55" src="img/ajax-loader.gif" alt="loading" title="loading" />
         </div>
+        
     	
     	<!--HOME-->
-    	<div class="page" data-role="page" id="home"> 
-            <div data-role="header" data-id="menu" data-position="fixed" data-theme="">
+    	<div class="page" data-role="page"  id="home"> 
+        
+            <div data-role="header" data-id="menu" class="header1" data-position="fixed" data-theme="a">
 
-                <div id="headerImg"> NOMBRE- LOGO <a href='#' onclick="cambiarHojaDeEstilos('css1');">Estilo 1</a><a href='#' onclick="cambiarHojaDeEstilos('css2');">Estilo 2</a></div>
+                <img weigth="360" height="50" alt="title" src="img/logoTexto.png"/>
+                
+                <div class="botones">
+	                <a data-role="button" class="changeStyle" data-inline="true">Cambiar estilo</a><br/>
+	                <a data-role="button" class="autores" data-inline="true">Info autores</a>
+                </div>
 
-                <div data-role="navbar">
+                <div data-role="navbar" class="menu">
 					<ul>
 						<li><a href="#home" class="ui-btn-active ui-state-persist">Home</a></li>
 						<li><a href="#productos" data-transition="pop">Productos</a></li>
 						<li><a href="#pedido" data-transition="pop">Pedido</a></li>
+						<li><a href="#readme" data-transition="slide" rel="external">Readme</a></li>
 					</ul>
                 </div><!-- /navbar -->
             </div><!-- /header --> 
             
-            <div data-role="content">
-    		   		
+            <div data-role="content" >
+    		  
+        
    				<div>*<br/>
    					**<br/>
    					***<br/>
@@ -96,24 +106,30 @@
             
             </div>
             
-            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari &amp; Diego Schwindt - 2Âº proyecto de IngenierÃ­a de Aplicaicones Web, UNS [1Âº cuatrim 2012]</div> 
+            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari &amp; Diego Schwindt - 2&deg; proyecto de Ingenier&iacute;a de Aplicaciones Web, UNS [1&deg; cuatrim 2012]</div> 
         
         </div> <!-- /home -->
             
         <!--PRODUCTOS-->
         <div class="page" data-role="page" id="productos"> 
-             <div data-role="header" data-id="menu" data-position="fixed" data-theme="a">
+             <div data-role="header" data-id="menu" class="header1" data-position="fixed" data-theme="a">
 
-                <div id="headerImg"> NOMBRE- LOGO <a href='#' onclick="cambiarHojaDeEstilos('css1');">Estilo 1</a><a href='#' onclick="cambiarHojaDeEstilos('css2');">Estilo 2</a></div>
+                <img weigth="360" height="50" alt="title" src="img/logoTexto.png"/>
+                
+                <div class="botones">
+	                <a data-role="button" class="changeStyle" data-inline="true">Cambiar estilo</a><br/>
+	                <a data-role="button" class="autores" data-inline="true">Info autores</a>
+                </div>
 
-                <div data-role="navbar">
+                <div data-role="navbar" class="menu">
 					<ul>
 						<li><a href="#home" data-transition="pop">Home</a></li>
 						<li><a href="#productos" class="ui-btn-active ui-state-persist">Productos</a></li>
 						<li><a href="#pedido" data-transition="pop">Pedido</a></li>
+						<li><a href="#readme" data-transition="slide" rel="external">Readme</a></li>
 					</ul>
                 </div><!-- /navbar -->
-            </div><!-- /header -->   
+            </div><!-- /header -->    
             <div data-role="content">
             
             	<div id="listaCat" data-role="collapsible-set" >
@@ -123,7 +139,7 @@
             
             
             </div> 
-            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari &amp; Diego Schwindt - 2Âº proyecto de IngenierÃ­a de Aplicaicones Web, UNS [1Âº cuatrim 2012]</div> 
+             
        
        		<!--Dialogo: confirmacion para agregar al pedido -->
         
@@ -148,6 +164,8 @@
 	            </div> 
 	        </div>
        
+       <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari &amp; Diego Schwindt - 2&deg; proyecto de Ingenier&iacute;a de Aplicaciones Web, UNS [1&deg; cuatrim 2012]</div>
+       
         </div> <!-- /productos-->
         
         
@@ -156,18 +174,24 @@
         
         <!--PEDIDO-->
         <div class="page" data-role="page" id="pedido"> 
-             <div data-role="header" data-id="menu" data-position="fixed" data-theme="a">
+             <<div data-role="header" data-id="menu" class="header1" data-position="fixed" data-theme="a">
 
-                <div id="headerImg"> NOMBRE- LOGO <a href='#' onclick="cambiarHojaDeEstilos('css1');">Estilo 1</a><a href='#' onclick="cambiarHojaDeEstilos('css2');">Estilo 2</a></div>
+                <img weigth="360" height="50" alt="title" src="img/logoTexto.png"/>
+                
+                <div class="botones">
+	                <a data-role="button" class="changeStyle" data-inline="true">Cambiar estilo</a><br/>
+	                <a data-role="button" class="autores" data-inline="true">Info autores</a>
+                </div>
 
-                <div data-role="navbar">
+                <div data-role="navbar" class="menu">
 					<ul>
 						<li><a href="#home" data-transition="pop">Home</a></li>
 						<li><a href="#productos" data-transition="pop">Productos</a></li>
 						<li><a href="#pedido" class="ui-btn-active ui-state-persist">Pedido</a></li>
+						<li><a href="#readme" data-transition="slide" rel="external">Readme</a></li>
 					</ul>
                 </div><!-- /navbar -->
-            </div><!-- /header --> 
+            </div><!-- /header -->    
             
             <div data-role="content">
 				
@@ -182,7 +206,7 @@
 				</div>
 				<div>
 					<h2>promos:</h2>
-					<ul data-role='listview' data-theme='d' data-divider-theme="e" id="promosPedido">
+					<ul data-role='listview' data-theme='c' data-divider-theme="e" id="promosPedido">
 					
 					</ul>
 				</div>
@@ -199,7 +223,7 @@
             
             </div> <!-- /content --> 
         
-            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari &amp; Diego Schwindt - 2Âº proyecto de IngenierÃ­a de Aplicaicones Web, UNS [1Âº cuatrim 2012]</div> 
+            <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari &amp; Diego Schwindt - 2&deg; proyecto de Ingenier&iacute;a de Aplicaciones Web, UNS [1&deg; cuatrim 2012]</div> 
         </div> <!-- /pedido-->   
         
         

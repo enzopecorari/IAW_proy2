@@ -43,10 +43,10 @@ div.agregar  {
     position: fixed;
     left: 50%;
     top: 50%;
-    width:500px;
-    height:400px;
-    margin-left: -250px;
-    margin-top: -200px;
+    width:600px;
+    height:600px;
+    margin-left: -300px;
+    margin-top: -300px;
     z-index:99999;
     -moz-box-shadow: 0 1px 4px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3);
@@ -146,8 +146,9 @@ div.agregar .buttonsConfirm a.cancel:active {
 	background: rgba(224,224,224,0.8);
 }
 
-#productosPedido .destroy {
+.destroy {
     background: url("images/destroy.png") no-repeat scroll 0 0 transparent;
+    
     display: none;
     cursor: pointer;
     height: 20px;
@@ -157,14 +158,15 @@ div.agregar .buttonsConfirm a.cancel:active {
     width: 20px;
 }
 
-#productosPedido li:hover .destroy {
+
+li:hover .destroy {
     display: block;
 }
-#productosPedido .destroy:hover {
+.destroy:hover {
     background-position: 0 -20px;
 }
 
-#productosPedido .cantProd {
+.cantProd {
     display: none;
     position: absolute;
     right: 30px;
@@ -173,7 +175,8 @@ div.agregar .buttonsConfirm a.cancel:active {
     
 }
 
-#productosPedido li:hover .cantProd {
+
+li:hover .cantProd {
     display: block;
 }
 
@@ -189,7 +192,7 @@ div.agregar .buttonsConfirm a.cancel:active {
     height:300px;
     margin-left: -300px;
     margin-top: -150px;
-    z-index:99999;
+  
     -moz-box-shadow: 0 1px 4px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3);
     box-shadow: 0 1px 4px rgba(0,0,0,.3);
@@ -221,7 +224,7 @@ div.agregar .buttonsConfirm a.cancel:active {
     top: 10px;
     width: 41px;
     height: 40px;
-    background: url(../img/nextP.png) no-repeat;
+    background: url(../img/prevP.png) no-repeat;
 
 }
 
@@ -231,9 +234,9 @@ div.agregar .buttonsConfirm a.cancel:active {
     position: absolute;
     left:50%;
     bottom: 10px;
-    width: 54px;
-    margin-left: -27px;
-    height: 35px;
+    width: 70px;
+    margin-left: -35px;
+    height: 45px;
     background: url(../img/cartP.gif) no-repeat;
 
 }
@@ -259,4 +262,24 @@ div.agregar .buttonsConfirm a.cancel:active {
 .imgProm {
 	padding: 20px 0px 0px 0px;
 	display: block;
+}
+
+.imgLargeProducto {
+	text-align:center;
+	display:block;
+	width:520px;
+}
+
+.contentConfirm {
+	text-align:center;
+}
+
+img.large{
+    -webkit-border-radius: 30px; /* Para Safari y Chrome */
+    -moz-border-radius: 30px; /* Para Firefox */
+    border-radius: 30px; /* CSS3 */
+   -moz-box-shadow: 3px 4px 12px rgba(0,0,0,.3);
+    -webkit-box-shadow: 3px 4px 12px rgba(0,0,0,.3);
+    box-shadow: 3px 4px 12px rgba(0,0,0,.3);
+	
 }

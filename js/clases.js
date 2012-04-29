@@ -48,6 +48,7 @@ function Promocion (_nombre, _descripcion, _descuento){
     var precioProm;
     var precioOrig =0;
     var descuento = _descuento;
+    var peso=0;
     var productos = [];
     var cantProducto=[];
     
@@ -62,13 +63,15 @@ function Promocion (_nombre, _descripcion, _descuento){
     this.getDescuento = function(){return descuento;} 
     this.addProducto = function(_producto,_cant){ 
     	productos[productos.length] = _producto;
-    	cantProducto[productos.length] = _cant;
+    	cantProducto[cantProducto.length] = _cant;
     	precioOrig+=_producto.getPrecio()*_cant;
     	precioProm = Math.round(precioOrig*(100-descuento)/100);
+    	peso+=_producto.getPeso()*_cant;
     }
     this.getProductos = function(){ return productos;} 
-    this.getCantidadProducto(index) = function() { return cantProducto[index]; }
+    this.getCantidadProducto = function(index) { return cantProducto[index]; }
     this.getCantidad = function() { return productos.length; }
+    this.getPeso = function(){  return  peso; } 
 
 
 
@@ -85,6 +88,13 @@ var Pedido = {
 		precioTotal: 0
 	},
 	
+	getProductos: function() { return this.data.productos;},
+	getProductosCant: function() { return this.data.productosCant;},
+	getPromociones: function() { return this.data.promociones;},
+	getPromocionesCant: function() { return this.data.proocionesCant;},
+	getPesoTotal: function() { return this.data.pesoTotal;},
+	getPrecioTotal: function() { return this.data.precioTotal;},
+	
 	addProducto: function(_prod,_cant) { 
 		var esta = false;
 		var i;
@@ -99,6 +109,12 @@ var Pedido = {
 			this.data.productos[i] = _prod;
 			this.data.productosCant[i] = _cant; 
 		}
+		var numCat = Math.floor(Number(_prod)/100);
+		var numProd = Number(_prod)%100;
+		var prod = categorias[numCat].getProducto(numProd);
+		this.data.pesoTotal += prod.getPeso() *_cant;
+		this.data.precioTotal += prod.getPrecio() *_cant;
+		alert(this.data.pesoTotal +" "+this.data.precioTotal);
 		return i;
 	},
 	addPromocion: function(_promo,_cant) { 
@@ -114,23 +130,47 @@ var Pedido = {
 			this.data.promociones[i] = _promo;
 			this.data.promocionesCant[i]=_cant;
 		}
+		this.data.pesoTotal += promociones[_promo].getPeso() *_cant;
+		this.data.precioTotal += promociones[_promo].getPrecioProm() *_cant;
+		alert(this.data.pesoTotal +" "+this.data.precioTotal);
+		return i;
 
 	},
 	removeProducto: function(index){
+		var numCat = Math.floor(Number(this.data.productos[index])/100);
+		var numProd = Number(this.data.productos[index])%100;
+		var prod = categorias[numCat].getProducto(numProd);
+		this.data.pesoTotal -= prod.getPeso() *this.data.productosCant[index];
+		this.data.precioTotal -= prod.getPrecio() *this.data.productosCant[index];
+		alert(this.data.pesoTotal +" "+this.data.precioTotal);
 		this.data.productos[index] = -1;
 		this.data.productosCant[index] =-1;
 		
 	},
 	cambiarCantProducto: function(index,cant) {
+		var dif = cant - this.data.productosCant[index];
+		var numCat = Math.floor(Number(this.data.productos[index])/100);
+		var numProd = Number(this.data.productos[index])%100;
+		var prod = categorias[numCat].getProducto(numProd);
+		this.data.pesoTotal += prod.getPeso() *dif;
+		this.data.precioTotal += prod.getPrecio() *dif;
+		alert(this.data.pesoTotal +" "+this.data.precioTotal);
 		this.data.productosCant[index] =cant;
 	},
 	removePromocion: function(index){
-		this.data.promocion[index] = -1;
-		this.data.promocionCant[index] =-1;
+		this.data.pesoTotal -= promociones[this.data.promociones[index]].getPeso() *this.data.promocionesCant[index];
+		this.data.precioTotal -= promociones[this.data.promociones[index]].getPrecioProm() *this.data.promocionesCant[index];
+		alert(this.data.pesoTotal +" "+this.data.precioTotal);
+		this.data.promociones[index] = -1;
+		this.data.promocionesCant[index] =-1;
 		
 	},
 	cambiarCantPromocion: function(index,cant) {
-		this.data.promocionCant[index] =cant;
+		var dif = cant - this.data.promocionesCant[index];
+		this.data.pesoTotal += promociones[this.data.promociones[index]].getPeso() *dif;
+		this.data.precioTotal += promociones[this.data.promociones[index]].getPrecioProm() *dif;
+		this.data.promocionesCant[index] =cant;
+		alert(this.data.pesoTotal +" "+this.data.precioTotal);
 	},
 	clear: function() {
 		this.data.productos = [];

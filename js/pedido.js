@@ -5,6 +5,17 @@ function actualizarPedido(almacenado) {
 		Pedido.data = JSON.parse(pedidoSerialized);
 	}
 	
+	if(Pedido.isEmpty()) {
+		$("#vacio").show();
+		$("#totalesPed").hide();
+		
+	}
+	else {
+		$("#vacio").hide();
+		$("#totalesPed").show();
+	}
+	
+
 	/*Productos*/
 	var html = "";
 	var lista1 = $('#productosPedido1');
@@ -16,6 +27,10 @@ function actualizarPedido(almacenado) {
 			var numProd = Number(posProd)%100;
 			var prod = categorias[numCat].getProducto(numProd);
 			var cant = Pedido.data.productosCant[i];
+			var peso = prod.getPeso()*cant;
+			peso  = Math.round(peso * Math.pow(10, 2)) / Math.pow(10, 2);
+			
+			
 			var options= "";
 			var c= 0;
 			for (j=0; j<15;j++) {
@@ -27,10 +42,10 @@ function actualizarPedido(almacenado) {
 			}
 			
 			html += "<li class='item' id='li"+i+"'> <img class='small' src='img/"+prod.getImgSmall()+"' alt='thumbnail'/>"+
-			"<h4 class='nombreProducto'>"+prod.getNombre()+" </h4>" + "<span class='destroy' onclick='quitarProducto("+i+");'></span>"+
-			"<span class='cantProd' data-role='fieldcontent'><label for='select-cant'>Cambiar cantidad </label><select id='selectCant' data-mini='true' data-inline='true' onchange='cambiarCant(this,"+i+")'>"+options+"</select></span>"+
-			"<p class='infoProducto'><span class='cantProducto'>Cantidad: "+cant+ "</span><span class='precioProducto'>$"+prod.getPrecio()*cant+" </span>" +
-			"<span class='pesoProducto'>"+prod.getPeso()*cant+" kg. </span>" +	"</p></li>";
+			"<h4 class='nombreProducto'>"+prod.getNombre()+" </h4>" + "<span class='destroy' alt='Quitar producto del pedido' onclick='quitarProducto("+i+");'></span>"+
+			"<span class='cantProd' data-role='fieldcontent'><label for='select-cant-li"+i+"'>Cambiar cantidad </label><select id='selectCant-li"+i+"' data-mini='true' data-inline='true' onchange='cambiarCant(this,"+i+")'>"+options+"</select></span>"+
+			"<p class='infoProducto'><span class='cantProducto'>Cantidad: "+cant+ "</span><span class='pesoProducto'>"+peso+" kg. </span>" +
+			"<span class='precioProducto'>$"+prod.getPrecio()*cant+" </span>" +	"</p></li>";
 		}		
 	}
 	lista1.html(html);
@@ -62,14 +77,16 @@ function actualizarPedido(almacenado) {
 			}
 			
 			html += "<li data-role='list-divider' class='itemProm'  id='promPed"+i+"'>" +
-			"<h3 class='nombrePromocion'>"+prom.getNombre()+" </h3>" + "<span class='destroy' onclick='quitarPromocion("+i+");'></span>"+
-			"<span class='cantProd' data-role='fieldcontent'><label for='select-cant'>Cambiar cantidad </label><select id='selectCant' data-mini='true' data-inline='true' onchange='cambiarCantPromo(this,"+i+")'>"+options+"</select></span>"+
+			"<h3 class='nombrePromocion'>"+prom.getNombre()+" </h3>" + "<span class='destroy' alt='Quitar promocion del pedido' onclick='quitarPromocion("+i+");'></span>"+
+			"<span class='cantProd' data-role='fieldcontent'><label for='select-cant-promPed"+i+"'>Cambiar cantidad </label><select id='selectCant-promPed"+i+"' data-mini='true' data-inline='true' onchange='cambiarCantPromo(this,"+i+")'>"+options+"</select></span>"+
 			"<span class='cantProducto'>Cantidad: "+cant+ "</span><span class='precioProducto'>$"+prom.getPrecioProm()*cant+" </span></li>";
 			for(j = 0; j <prom.getProductos().length;j++) {
 				var p = prom.getProductos()[j];
-				html+= "<li class='itemProm promPed"+i+"'>" + "<img class='small' src='img/"+p.getImgSmall()+"' alt='thumbnail'/>"+
+				var peso = p.getPeso()*p.getUnidEncargue()*prom.getCantidadProducto(j)*cant;
+				peso  = Math.round(peso * Math.pow(10, 2)) / Math.pow(10, 2);
+				html+= "<li class='item promPed"+i+"'>" + "<img class='small' src='img/"+p.getImgSmall()+"' alt='thumbnail'/>"+
 				"<h4 class='nombreProducto'>"+p.getNombre()+" </h4>" +
-				"<p class='infoProducto'><span class='cantProducto'>Cantidad: "+prom.getCantidadProducto(j)*cant+" </span><span class='pesoProducto'>"+p.getPeso()*cant+" kg. </span>" +	"</p></li>";
+				"<p class='infoProducto'><span class='cantProducto'>Cantidad: "+prom.getCantidadProducto(j)*cant+" </span><span class='pesoProducto'>"+peso+" kg. </span>" +	"</p></li>";
 			}
 
 				
@@ -89,6 +106,7 @@ function actualizarPedido(almacenado) {
 	catch(e) {}
 	actualizarPeso();
 	actualizarPrecio();
+	
 }
 
 function almacenarPedido() {
@@ -131,12 +149,14 @@ function cambiarCantPromo(elem,index) {
 }
 
 function actualizarPrecio() {
-	$("#precioTotal").html(Pedido.getPrecioTotal());
+	var precio = Math.round(Pedido.getPrecioTotal() * Math.pow(10, 2)) / Math.pow(10, 2);
+	$("#precioTotal").html(precio);
 
 }
 
 function actualizarPeso() {
-	$("#pesoTotal").html(Pedido.getPesoTotal());
+	var peso = Math.round((Pedido.getPesoTotal()) * Math.pow(10, 2)) / Math.pow(10, 2);
+	$("#pesoTotal").html(peso);
 }
 
 function encargarPedido() {

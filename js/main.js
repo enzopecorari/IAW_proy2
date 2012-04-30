@@ -35,7 +35,7 @@ $(document).ready(function() {
 	$('#pedirPromo').click(crearDialogoPromo);
 	actualizarPedido(true);
 	aplicarEstilo();
-	$('#encargar').click(encargarPedido);
+	$('.encargar').click(encargarPedido);
 	$('#clear').click(limpiarPedido);
 	$('.changeStyle').click(changeStyle);
 	$('a.autores').click(mostrarAutores);
@@ -88,7 +88,7 @@ function mostrarAutores() {
 			"<h3>Enzo A. Pecorari</h3>" +
 			"<h4>LU: 89112 - enzo_pecorari@hotmail.com</h4>" +
 			"<h3>Diego M. Schwindt</h3>" +
-			"<h4>LU: 88993 - diego.sch21.com</h4>" +
+			"<h4>LU: 88993 - diego.sch21@gmail.com</h4>" +
 			"<p>Ingenier&iacute;a de Aplicaciones Web - 2do cuatrimestre 2012</br>Universidad Nacional del Sur</p>"+
 			"<p><strong>Un proyecto bien de machos!! =P</p>";
 	$("#autores .contentAutores").html(html);

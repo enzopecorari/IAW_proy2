@@ -85,9 +85,11 @@ var Pedido = {
 		promociones: [], 
 		promocionesCant: [],
 		pesoTotal: 0,
-		precioTotal: 0
+		precioTotal: 0,
+		cuenta:0
 	},
-	
+	isEmpty: function() {if (this.data.cuenta==0) return true
+							else return false;},
 	getProductos: function() { return this.data.productos;},
 	getProductosCant: function() { return this.data.productosCant;},
 	getPromociones: function() { return this.data.promociones;},
@@ -108,13 +110,14 @@ var Pedido = {
 		else {
 			this.data.productos[i] = _prod;
 			this.data.productosCant[i] = _cant; 
+			this.data.cuenta++;
 		}
 		var numCat = Math.floor(Number(_prod)/100);
 		var numProd = Number(_prod)%100;
 		var prod = categorias[numCat].getProducto(numProd);
 		this.data.pesoTotal += prod.getPeso() *_cant;
 		this.data.precioTotal += prod.getPrecio() *_cant;
-
+		
 		return i;
 	},
 	addPromocion: function(_promo,_cant) { 
@@ -129,10 +132,11 @@ var Pedido = {
 		else {
 			this.data.promociones[i] = _promo;
 			this.data.promocionesCant[i]=_cant;
+			this.data.cuenta++;
 		}
 		this.data.pesoTotal += promociones[_promo].getPeso() *_cant;
 		this.data.precioTotal += promociones[_promo].getPrecioProm() *_cant;
-
+		this.data.vacio = false;
 		return i;
 
 	},
@@ -142,7 +146,7 @@ var Pedido = {
 		var prod = categorias[numCat].getProducto(numProd);
 		this.data.pesoTotal -= prod.getPeso() *this.data.productosCant[index];
 		this.data.precioTotal -= prod.getPrecio() *this.data.productosCant[index];
-
+		this.data.cuenta--;
 		this.data.productos[index] = -1;
 		this.data.productosCant[index] =-1;
 		
@@ -160,7 +164,7 @@ var Pedido = {
 	removePromocion: function(index){
 		this.data.pesoTotal -= promociones[this.data.promociones[index]].getPeso() *this.data.promocionesCant[index];
 		this.data.precioTotal -= promociones[this.data.promociones[index]].getPrecioProm() *this.data.promocionesCant[index];
-
+		this.data.cuenta--;
 		this.data.promociones[index] = -1;
 		this.data.promocionesCant[index] =-1;
 		
@@ -179,6 +183,7 @@ var Pedido = {
 		this.data.promocionesCant = [];
 		this.data.pesoTotal = 0;
 		this.data.precioTotal = 0;
+		this.data.cuenta = 0;
 	}
 	
 	

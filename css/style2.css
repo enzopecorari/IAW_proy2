@@ -2,7 +2,13 @@ html {
 	height:100%;
 }
 
+estilo2 {
+	display: '';
+}
 
+estilo1 {
+	display: 'none';
+}
 body {
 	text-align: center;
 	background-image: url(../img/pattern2.png), url(../img/background2.jpg);
@@ -535,7 +541,133 @@ img.small {
 	padding-top: 10px;
 }
 
+#listasPed {
+	text-align:center;
+	padding: 10px 10px 30px 10px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+        
+    width:680px;
+    margin-left: -340px;
+}
 
+#listasPed ul {
+	
+	margin-bottom:10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+#listasPed {
+	text-align:center;
+	padding: 10px 10px 30px 10px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+        
+    width:690px;
+    margin-left: -345px;
+
+
+}
+#listasPed ul {
+	
+	margin-bottom:10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#listasPed .item img {
+	top: 5px;
+
+	max-width:35px;
+	max-height:35px;
+}
+
+#listasPed .item:hover img {
+	top: 5px;
+	margin-top:0;
+	max-width:120px;
+	max-height:120px;
+}
+
+#listasPed .item {
+	padding-left:45px;
+	min-height:35px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#listasPed .item:hover {
+	padding-left:130px;
+	height: 90px;
+	
+}
+
+#listasPed .item:hover .nombreProducto {
+	font-style: italic;
+	display: block;
+}
+
+#listasPed .item .nombreProducto {
+	font-style: italic;
+	display: inline;
+}
+
+#listasPed .cantProd label {
+	font-weight: normal;
+	font-style: italic;
+}
+
+#listasPed .item .infoProducto {
+	
+	display: inline;
+}
+#listasPed .item:hover .infoProducto {
+	
+	display: block;
+}
+
+#listasPed .cantProducto {
+	font-weight: bold;
+	padding-right: 10px;
+	display: inline-block;
+}
+#listasPed .pesoProducto {
+	font-style: italic;
+	padding-right: 10px;
+	display: inline-block;
+}
+#listasPed .precioProducto {
+	font-weight: bold;
+	font-size:16px;
+	display: inline-block;
+	color: #008000;
+}
+
+#totalesPed  {
+	padding-top:5px;
+	padding-bottom:10px;
+}
+
+#totalesPed #pesoT {
+	font-weight: bold;
+	font-size: 18px;
+}
+#totalesPed #pesoT #pesoTotal {
+	font-style: italic;
+}
+
+#totalesPed #precioT {
+	font-weight: bold;
+	font-size: 18px;
+}
+#totalesPed #precioT #precioTotal {
+	color: #008000;
+	font-size: 22px;
+}
 
 .destroy {
     background: url("images/destroy.png") no-repeat scroll 0 0 transparent;

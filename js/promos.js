@@ -70,7 +70,7 @@ function crearDialogoPromo(event) {
 		else
 			options+= "<option value="+i+">"+i+"</option>";
 	}
-	$('#promocion .agregar #selectCant').html(options).selectmenu('refresh');
+	$('#promocion .agregar #selectCantProm').html(options).selectmenu('refresh');
 
 	var html= "<ul class='listaProdPromo'>";
 	for(j = 0; j <promo.getProductos().length;j++) {
@@ -107,7 +107,7 @@ function cambiarCantAgregarPromo(elem) {
 }
 
 function okAgregarPromo() {	
-	var cant =  Number($('#promocion .agregar #selectCant').val());
+	var cant =  Number($('#promocion .agregar #selectCantProm').val());
 	Pedido.addPromocion(promActual,cant);
 	
 	almacenarPedido();

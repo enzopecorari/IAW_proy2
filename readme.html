@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>IAW - Proyecto 2 - Pecorari&Schwindt</title>
+</head>
+<body style="text-align: left">
+	<h1>README</h1>
+	<h2>[Proyecto 2, Ingenier&iacute;a de Aplicaciones Web 2012] By Enzo Pecorari & Diego Schwindt</h2>
+	<p>Cat&aacute;logo de productos y promociones de una pasteler&iacute;a. En este proyecto se utilizan varias tecnolog&iacute;as de vanguardia, que conforman html5</p>
+	
+	<h3>Navegadores soportados</h3>
+	<ul>
+		<li>El sitio fue testeado y optimizado para Firefox (v12) y Google Chrome (v18). En Internet Explorer no funciona en principio la lectura de lox xml</li>
+	</ul>
+	
+	<h3>Liber&iacute;as utilizadas</h3>
+	<ul>
+		<li>jQuery (<a href="http://api.jquery.com/">http://api.jquery.com/</a>): Brinda facilidades para el manejo del DOM: acceso y modificaci&oacute;n de elementos, eventos, etc...<br/>
+			Archivo: <i>js/lib/jquery-1.7.1.min.js</i>
+		</li>
+		<li>jQuery Mobile (<a href="http://jquerymobile.com/test/">http://jquerymobile.com/test/</a>): Librer&iacute;a gr&aacute;fica que complementa jQuery. Pensada especialmente para el desarrollo de aplicaciones para dispositivos m&oacute;viles. Mediante el agregado de atributos data-* en el c&oacute;digo html, permite estilizar la p&aacute;gina de un  modo muy r&aacute;pido y sencillo.<br/>
+			Archivos: <i>js/lib/jquery.mobile-1.1.0-rc.1.min.js</i> y <i>css/images/jquery.mobile-1.0.1.min.css</i>
+		</li>
+	</ul>
+	
+	<h3>Validaci&oacute;n XHTML</h3>
+	<ul>
+		<li>La p&aacute;gina no valida completamente segun el validadodr de XHTML. Esto es porque usamos los atributos data-* de jQueryMobile, y porque no acepta listas vac&iacute;as que son generadas mediante javascript</li>
+		<li>Sin embargo, es un html v&aacute;lido seg&uacute;n el validadodr de html5</li>
+	</ul>
+	
+	<h3>Dise&ntilde;o (a nivel desarrollo)</h3>
+	<ul>
+		<li>Los productos y promociones fueron modelados con objetos. La definici&oacute;n (atributos y m&eacute;todos) de los mismos se encuentra en <i>js/clases.js</i>. El pedido tambi&eacute;n es un objeto, &uacute;nico en el sistema, y tambi&eacute;n se encuentra definido en el mismo .js</li>
+		<li>Para modularizar, se separaron las funciones desarrolladas en 3 archivos, seg&uacute;n el procesamiento que realizan: <i>js/productos.js</i>, <i>promos.js</i> y <i>pedido.js</i></li>
+		<li>En <i>js/main.js</i> se inicializan las varias globales y se llama a los m&eacute;todos necesarios, una vez que el DOM est&aacute; listo</li>
+	</ul>
+	
+	<h3>Cuestiones t&eacute;cnicas</h3>
+	<ul>
+		
+		<li>Para que el navegador recuerde el estilo actual, y el pedido actual, en lugar de usar cookies hicimos uso de la api de HTML5 <b>localStorage</b>.</li>
+		<li>index.html es un html "multip&aacute;gina", como propone jQuery Mobile. Esto permite navegar de forma muy veloz entre las secciones del sitio, ya que s&oacute;lo se hace un requerimiento HTTP al principio</li>
+		<li>Los botones, listas, y "conjuntos acorde&oacute;n" fueron estilizados mediante jQuery Mobile. Al cambiar de estilo, adem&aacute;s de las reglas especificadas en nuestras hojas de estilo, tambi&eacute;n modificamos el data-theme de esos elementos.</li>
+	</ul>
+	
+	
+	
+</body>
+</html>

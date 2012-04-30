@@ -2,6 +2,13 @@ html {
 	height:100%;
 }
 
+.estilo1 {
+	display: '';
+}
+
+.estilo2 {
+	display: 'none';
+}
 
 body {
 	
@@ -523,6 +530,72 @@ img.small {
 #productos #prodAgregado .botonVerPedido {
 	padding-top: 10px;
 }
+
+#listasPed {
+	text-align:center;
+	padding: 10px 10px 30px 10px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+        
+    width:500px;
+    margin-left: -250px;
+
+
+}
+#listasPed ul {
+	
+	margin-bottom:10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#listasPed li img {
+	top: auto;
+}
+#listasPed .nombreProducto {
+	font-style: italic;
+}
+
+#listasPed .cantProd label {
+	font-weight: normal;
+	font-style: italic;
+}
+
+#listasPed .cantProducto {
+	font-weight: bold;
+	padding-right: 10px;
+}
+#listasPed .pesoProducto {
+	font-style: italic;
+	padding-right: 10px;
+}
+#listasPed .precioProducto {
+	font-weight: bold;
+	font-size:16px;
+	color: #008000;
+}
+#totalesPed  {
+	padding-top:5px;
+	padding-bottom:10px;
+}
+#totalesPed #pesoT {
+	font-weight: bold;
+	font-size: 18px;
+}
+#totalesPed #pesoT #pesoTotal {
+	font-style: italic;
+}
+
+#totalesPed #precioT {
+	font-weight: bold;
+	font-size: 18px;
+}
+#totalesPed #precioT #precioTotal {
+	color: #008000;
+	font-size: 22px;
+}
+
 
 
 

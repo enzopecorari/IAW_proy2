@@ -7,7 +7,8 @@ function actualizarPedido(almacenado) {
 	
 	/*Productos*/
 	var html = "";
-	var lista = $('#productosPedido');
+	var lista1 = $('#productosPedido1');
+	var lista2 = $('#productosPedido2');
 	for (i=0; i<Pedido.data.productos.length;i++) {
 		var posProd = Pedido.data.productos[i];
 		if (posProd >=0) {
@@ -32,17 +33,21 @@ function actualizarPedido(almacenado) {
 			"<span class='pesoProducto'>"+prod.getPeso()*cant+" kg. </span>" +	"</p></li>";
 		}		
 	}
-	lista.html(html);
+	lista1.html(html);
+	lista2.html(html)
 	try {
-		$('#productosPedido .item #select-cant').selectmenu('refresh');
+		$('#productosPedido1 .item #select-cant').selectmenu('refresh');
+		$('#productosPedido2 .item #select-cant').selectmenu('refresh');
 		//lista.listview();
-		lista.listview('refresh');
+		lista1.listview('refresh');
+		lista2.listview('refresh');
 	}
 	catch(e) {}
 	
 	/*Promos*/
 	html = "";
-	lista = $('#promosPedido');
+	lista1 = $('#promosPedido1');
+	lista2 = $('#promosPedido2');
 	for (i=0; i<Pedido.data.promociones.length;i++) {
 		var posProm = Pedido.data.promociones[i];
 		if (posProm >=0) {
@@ -72,12 +77,14 @@ function actualizarPedido(almacenado) {
 		
 		
 	}
-	lista.html(html);
-	
+	lista1.html(html);
+	lista2.html(html);
 	try {
-		$('#promosPedido .item #select-cant').selectmenu('refresh');
+		$('#promosPedido1 .item #select-cant').selectmenu('refresh');
+		$('#promosPedido2 .item #select-cant').selectmenu('refresh');
 		//lista.listview();
-		lista.listview('refresh');
+		lista1.listview('refresh');
+		lista2.listview('refresh');
 	}
 	catch(e) {}
 	actualizarPeso();

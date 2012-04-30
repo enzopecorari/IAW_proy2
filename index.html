@@ -35,38 +35,56 @@
     	
     	<!--HOME-->
     	<div class="page" data-role="page"  id="home"> 
-        
             <div data-role="header" data-id="menu" class="header1" data-position="fixed" data-theme="a">
 
-                <img weigth="360" height="50" alt="title" src="img/logoTexto.png"/>
+                <img class="estilo1" weigth="360" height="50" alt="title" src="img/logoTexto1.png"/>
+                <img class="estilo2" weigth="360" height="50" alt="title" src="img/logoTexto2.png"/>
                 
-                <div class="botones">
-	                <a data-role="button" class="changeStyle" data-inline="true">Cambiar estilo</a><br/>
-	                <a data-role="button" class="autores" data-inline="true">Info autores</a>
+                <div class="botones estilo1">
+	                <a data-role="button" class="changeStyle" data-inline="true">Cambiar estilo</a>
+                </div>
+                <div class="botones estilo2">
+	                <a data-role="button" class="changeStyle" data-inline="true" data-theme="b">Cambiar estilo</a>
                 </div>
 
-                <div data-role="navbar" class="menu">
+                <div data-role="navbar" class="menu estilo1" data-theme="a">
 					<ul>
-						<li><a href="#home" class="ui-btn-active ui-state-persist">Home</a></li>
+						<li><a href="#home" class="ui-btn-active ui-state-persist" data-theme="e">Home</a></li>
 						<li><a href="#productos" data-transition="pop">Productos</a></li>
 						<li><a href="#pedido" data-transition="pop">Pedido</a></li>
 						<li><a href="#readme" data-transition="slide" rel="external">Readme</a></li>
 					</ul>
                 </div><!-- /navbar -->
+                <div data-role="navbar" class="menu estilo2" data-theme="b">
+					<ul>
+						<li><a href="#home" class="ui-btn-active ui-state-persist" data-theme="b">Home</a></li>
+						<li><a href="#productos" data-transition="pop" data-theme="b">Productos</a></li>
+						<li><a href="#pedido" data-transition="pop" data-theme="b">Pedido</a></li>
+						<li><a href="#readme" data-transition="slide" rel="external" data-theme="b">Readme</a></li>
+					</ul>
+                </div><!-- /navbar -->
             </div><!-- /header --> 
             
-            <div data-role="content" >
+            <div class="pageContent" data-role="content" >
     		  
         
-   				<div>*<br/>
-   					**<br/>
-   					***<br/>
-   					****<br/>
-   					*****  boludeces presenteando a la empresa<br/>
-   					****<br/>
-   					***		info util<br/>
-   					**<br/>
-   					*</div>
+   				<div id='infoHome'>
+   					<img class="estilo1" src="img/logo1.png" height="226" width="310" alt="logoGrande"/>
+   					<img class="estilo2" src="img/logo2.png" height="226" width="310" alt="logoGrande"/>
+   					<div id="texto">
+   						<h3>Un nuevo concepto en pasteler&iacute;a</h3>
+   						<p>&iexcl;&iexcl;Ahora pod&eacute;s hacer tu encargue para fiestas, reuniones y agasajos con unos clicks!!</br>
+   							R&aacute;pido y f&aacute;cil, con la garant&iacute;a de confianza de nuestra experiencia, haciendo las cosas dulces m&aacute;s ricas del pa&iacute;s
+   						</p>
+   						<div class="botonAutores estilo1">
+	                       <a data-role="button" class="autores" data-inline="true" data-theme="e">Info autores</a>
+                		</div>
+                		<div class="botonAutores estilo2">
+	                       <a data-role="button" class="autores" data-inline="true" data-theme="b">Info autores</a>
+                		</div>
+                	</div>
+   					<div id="titlePromos"><h2>Promociones en vigencia</h2></div>
+   				</div>
 
                <div id="promocion">
                		<a class="prevPromo" id="prevPromo" title="Promoci&oacute;n anterior" ></a>
@@ -76,6 +94,16 @@
     				<div class="imgProm"></div>
     				<span class="precioOrig"></span><span class="precioProm"></span>
     				<a class="pedirPromo" id="pedirPromo" title="Agregar promoci&oacute;n al pedido..." ></a>
+    				<div id="promoAgregada">
+								<h3>Promoción agregada al pedido</h3>
+								<div class="botonVerPedido estilo1">
+	                       			<a href="#pedido" data-role="button" data-transition="pop" data-theme="e">Ver pedido</a>
+                				</div>
+                				<div class="botonVerPedido estilo2">
+	                       			<a href="#pedido" data-role="button" data-transition="pop" data-theme="b">Ver pedido</a>
+                				</div>
+														
+					</div>
     				
     				
     				<!--Dialogo: confirmacion para agregar al pedido -->
@@ -106,6 +134,18 @@
             
             </div>
             
+            
+            <div id="autores">
+            	<div class='contentAutores'></div>
+            	<div class="okAutores estilo1">
+                   <a data-role="button" class="volverAutores" data-inline="true" data-theme="e" data-icon="back">Volver</a>
+        		</div>
+        		<div class="okAutores estilo2">
+                   <a data-role="button" class="volverAutores" data-inline="true" data-theme="b" data-icon="back">Volver</a>
+        		</div>
+            </div>
+            
+            
             <div data-role="footer" data-id="pie" data-position="fixed">&copy; 2012 - Enzo Pecorari &amp; Diego Schwindt - 2&deg; proyecto de Ingenier&iacute;a de Aplicaciones Web, UNS [1&deg; cuatrim 2012]</div> 
         
         </div> <!-- /home -->
@@ -114,14 +154,17 @@
         <div class="page" data-role="page" id="productos"> 
              <div data-role="header" data-id="menu" class="header1" data-position="fixed" data-theme="a">
 
-                <img weigth="360" height="50" alt="title" src="img/logoTexto.png"/>
+                <img class="estilo1" weigth="360" height="50" alt="title" src="img/logoTexto1.png"/>
+                <img class="estilo2" weigth="360" height="50" alt="title" src="img/logoTexto2.png"/>
                 
-                <div class="botones">
-	                <a data-role="button" class="changeStyle" data-inline="true">Cambiar estilo</a><br/>
-	                <a data-role="button" class="autores" data-inline="true">Info autores</a>
+                <div class="botones estilo1">
+	                <a data-role="button" class="changeStyle" data-inline="true">Cambiar estilo</a>
+                </div>
+                <div class="botones estilo2">
+	                <a data-role="button" class="changeStyle" data-inline="true" data-theme="b">Cambiar estilo</a>
                 </div>
 
-                <div data-role="navbar" class="menu">
+                <div data-role="navbar" class="menu estilo1">
 					<ul>
 						<li><a href="#home" data-transition="pop">Home</a></li>
 						<li><a href="#productos" class="ui-btn-active ui-state-persist">Productos</a></li>
@@ -129,10 +172,21 @@
 						<li><a href="#readme" data-transition="slide" rel="external">Readme</a></li>
 					</ul>
                 </div><!-- /navbar -->
+                <div data-role="navbar" class="menu estilo2" data-theme="b">
+					<ul>
+						<li><a href="#home" data-transition="pop" data-theme="b">Home</a></li>
+						<li><a href="#productos" class="ui-btn-active ui-state-persist" data-theme="b">Productos</a></li>
+						<li><a href="#pedido" data-transition="pop" data-theme="b">Pedido</a></li>
+						<li><a href="#readme" data-transition="slide" rel="external" data-theme="b">Readme</a></li>
+					</ul>
+                </div><!-- /navbar -->
             </div><!-- /header -->    
-            <div data-role="content">
+            <div class="pageContent" data-role="content">
             
-            	<div id="listaCat" data-role="collapsible-set" >
+            	<div class="estilo1" id="listaCat1" data-role="collapsible-set" >
+                    
+				</div>	
+				<div class="estilo2" id="listaCat2" data-role="collapsible-set" >
                     
 				</div>
             
@@ -174,16 +228,19 @@
         
         <!--PEDIDO-->
         <div class="page" data-role="page" id="pedido"> 
-             <<div data-role="header" data-id="menu" class="header1" data-position="fixed" data-theme="a">
+             <div data-role="header" data-id="menu" class="header1" data-position="fixed" data-theme="a">
 
-                <img weigth="360" height="50" alt="title" src="img/logoTexto.png"/>
+                <img class="estilo1" weigth="360" height="50" alt="title" src="img/logoTexto1.png"/>
+                <img class="estilo2" weigth="360" height="50" alt="title" src="img/logoTexto2.png"/>
                 
-                <div class="botones">
-	                <a data-role="button" class="changeStyle" data-inline="true">Cambiar estilo</a><br/>
-	                <a data-role="button" class="autores" data-inline="true">Info autores</a>
+                <div class="botones estilo1">
+	                <a data-role="button" class="changeStyle" data-inline="true">Cambiar estilo</a>
+                </div>
+                <div class="botones estilo2">
+	                <a data-role="button" class="changeStyle" data-inline="true" data-theme="b">Cambiar estilo</a>
                 </div>
 
-                <div data-role="navbar" class="menu">
+                <div data-role="navbar" class="menu estilo1">
 					<ul>
 						<li><a href="#home" data-transition="pop">Home</a></li>
 						<li><a href="#productos" data-transition="pop">Productos</a></li>
@@ -191,30 +248,43 @@
 						<li><a href="#readme" data-transition="slide" rel="external">Readme</a></li>
 					</ul>
                 </div><!-- /navbar -->
+                <div data-role="navbar" class="menu estilo2" data-theme="b">
+					<ul>
+						<li><a href="#home" data-transition="pop" data-theme="b">Home</a></li>
+						<li><a href="#productos"  data-transition="pop" data-theme="b">Productos</a></li>
+						<li><a href="#pedido" class="ui-btn-active ui-state-persist" data-theme="b">Pedido</a></li>
+						<li><a href="#readme" data-transition="slide" rel="external" data-theme="b">Readme</a></li>
+					</ul>
+                </div><!-- /navbar -->
             </div><!-- /header -->    
             
-            <div data-role="content">
+            <div class="pageContent" data-role="content">
 				
 				<div>
 					<h2>productos:</h2>
 					<div>
-	                    <ul data-role='listview' data-theme='e' id='productosPedido'>
+	                    <ul class='estilo1' data-role='listview' data-theme='e' id='productosPedido1'>
 	                        
 	                    </ul>
-
+						<ul class='estilo2' data-role='listview' data-theme='b' id='productosPedido2'>
+	                        
+	                    </ul>
                 	</div>
 				</div>
 				<div>
 					<h2>promos:</h2>
-					<ul data-role='listview' data-theme='c' data-divider-theme="e" id="promosPedido">
+					<ul class='estilo1' data-role='listview' data-theme='c' data-divider-theme='e' id="promosPedido1">
+					
+					</ul>
+					<ul class='estilo2' data-role='listview' data-theme='b' data-divider-theme='b' id="promosPedido2">
 					
 					</ul>
 				</div>
 				<div>
 					<div>Peso: <span id="pesoTotal"></span> kg.
 					TOTAL: $<span id="precioTotal"></span></div>
-					<a id="encargar" data-role="button" data-theme="a" data-inline="true" >Encargar pedido</a>
-					<a id="clear" data-role="button" data-theme="b" data-inline="true">Quitar todo</a> 
+					<a id="encargar" data-role="button" data-theme="b" data-inline="true" >Encargar pedido</a>
+					<a id="clear" data-role="button" data-theme="a" data-inline="true">Quitar todo</a> 
 				</div>
 				
 				

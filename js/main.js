@@ -34,9 +34,12 @@ $(document).ready(function() {
 	$('#prevPromo').click(prevPromo);
 	$('#pedirPromo').click(crearDialogoPromo);
 	actualizarPedido(true);
+	aplicarEstilo();
 	$('#encargar').click(encargarPedido);
 	$('#clear').click(limpiarPedido);
 	$('.changeStyle').click(changeStyle);
+	$('a.autores').click(mostrarAutores);
+	$('a.volverAutores').click(volverAutores);
 	$('div#loading').hide('slow');
     $('#imgLoading').hide('slow');
 });
@@ -44,16 +47,7 @@ $(document).ready(function() {
 
 //CAMBIAR CSS
 function changeStyle() {
-    /*var i, a, main;
-    for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
-    	if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")){
-            a.disabled = true;
-            if(a.getAttribute("title") == title) a.disabled = false;
-            if(a.getAttribute("title") == "main") a.disabled = false;
-            if(a.getAttribute("title") == "mobile") a.disabled = false;
-        }
-    }
-    */
+
 	if(style==1) {
 		style=2;
 		$('#estilo1').attr('disabled','disabled');
@@ -66,7 +60,37 @@ function changeStyle() {
 		$('#estilo2').attr('disabled','disabled');
 	}
 	localStorage.setItem('proy2-style',style);
+	aplicarEstilo();
 	
 }
 
 
+function aplicarEstilo() {
+
+	if(style==1) {
+		$(".estilo1").show();
+		$(".estilo2").hide();
+	}
+	else if (style==2) {
+		$(".estilo2").show();
+		$(".estilo1").hide();
+	} 
+
+}
+
+function mostrarAutores() {
+	var html = "<h2>Desarrolladores</h2>" +
+			"<h3>Enzo A. Pecorari</h3>" +
+			"<h4>LU: 89112 - enzo_pecorari@hotmail.com</h4>" +
+			"<h3>Diego M. Schwindt</h3>" +
+			"<h4>LU: 88993 - diego.sch21.com</h4>" +
+			"<p>Ingenier&iacute;a de Aplicaciones Web - 2do cuatrimestre 20120</br>Universidad Nacional del Sur</p>";
+	$("#autores .contentAutores").html(html);
+	$('div#loading').show();
+	$("#autores").show();
+}
+
+function volverAutores(){
+	$('div#loading').hide();
+	$("#autores").hide();
+}

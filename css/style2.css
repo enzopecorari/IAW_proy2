@@ -19,7 +19,8 @@ body {
     width: 750px!important;
     left: 50%!important;
     margin-left: -375px;
-    background: rgba(264,269,213,0.7);
+    background: rgba(224,248,247,0.7);
+    height:1000px;
 }
 
 .header1 {
@@ -31,6 +32,7 @@ body {
 	background-attachment: fixed;
 	background-size: auto, cover;
 	height: 100px!important;
+	text-align:center;
 }
 
 .header1 img {
@@ -46,6 +48,8 @@ body {
 	position:absolute;
 	right:0;
 	top:0;
+	padding: 5px 5px 5px 5px;
+	
 	
 }
 
@@ -86,12 +90,77 @@ div#imgLoading {
     z-index:99999;
 }
 
+.estilo2 {
+	display;
+}
+.estilo1 {
+	display:none;
+}
+
+#infoHome {
+	text-align:center;
+	padding: 10px 10px 10px 10px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+        
+    width:330px;
+    height:250px;
+    margin-left: -165px;
+    margin-top: -125px;
+}
+
+
+#infoHome {
+	text-align:center;
+	padding: 10px 10px 10px 10px;
+    position: absolute;
+    top: 230px;
+    left: 50%;
+        
+    width:680px;
+    height:250px;
+    margin-left: -340px;
+    margin-top: -125px;
+}
+
+#infoHome img{
+	float:left;
+    -webkit-border-radius: 15px; /* Para Safari y Chrome */
+    -moz-border-radius: 15px; /* Para Firefox */
+    border-radius: 15px; /* CSS3 */
+   -moz-box-shadow: 3px 4px 5px rgba(255,255,255,.5);
+    -webkit-box-shadow: 3px 4px 5px rgba(255,255,255,.5);
+    box-shadow: 3px 4px 5px rgba(255,255,255,.5);
+	
+}
+
+#infoHome #texto{
+	float: left;
+	width:320px;
+	padding-left: 10px;
+	padding-top: 10px;
+	color: #030558;
+	text-shadow: 0 /*{c-body-shadow-x}*/ 1px /*{c-body-shadow-y}*/ 5px /*{c-body-shadow-radius}*/ #848484/*{c-body-shadow-color}*/
+}
+
+
+#infoHome .botonAutores {
+	clear:both;
+	text-align:center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#titlePromos {
+	color: #030558;
+	text-shadow: 0 /*{c-body-shadow-x}*/ 1px /*{c-body-shadow-y}*/ 5px /*{c-body-shadow-radius}*/ #848484/*{c-body-shadow-color}*/
+}
 
 #promocion {
 	text-align:center;
 	padding: 10px 10px 10px 10px;
     position: absolute;
-    top: 400px;
+    top: 550px;
     left: 50%;
         
     width:600px;
@@ -108,7 +177,7 @@ div#imgLoading {
     -moz-box-border-radius: .3em;
     -webkit-box-border-radius: .3em;
     border-radius: .3em;
-    background: rgba(240,239,200,0.85);
+    background: rgba(224,239,246,0.9);
 }
 #nextPromo {
 	
@@ -118,7 +187,7 @@ div#imgLoading {
     top: 10px;
     width: 41px;
     height: 40px;
-    background: url(../img/nextP.png) no-repeat;
+    background: url(../img/next2.png) no-repeat;
 
 }
 
@@ -127,10 +196,10 @@ div#imgLoading {
     cursor:pointer;
     position: absolute;
     left:20px;
-    top: 10px;
+    top:10px;
     width: 41px;
     height: 40px;
-    background: url(../img/prevP.png) no-repeat;
+    background: url(../img/prev2.png) no-repeat;
 
 }
 
@@ -139,35 +208,58 @@ div#imgLoading {
     cursor:pointer;
     position: absolute;
     left:50%;
-    bottom: 10px;
-    width: 70px;
+    bottom: 5px;
+    width: 50px;
     margin-left: -35px;
-    height: 45px;
-    background: url(../img/cartP.gif) no-repeat;
+    height: 41px;
+    background: url(../img/cart2.gif) no-repeat;
 
 }
 .tittleProm {
 	margin-left: 0px;
-	padding: 50px 0px 0px 0px;
+	padding: 20px 5px 5px 5px;
 	display: inline;
 	font-style:italic;
 	font-family:arial, "courier new", impact;
-	font-size:30px;
+	font-size:24px;
+	color:#0061AB;
 }
 .descProm {
-	padding: 10px 30px 5px 40px;
+	padding: 10px 5px 10px 5px;
 	display: block;
 	font-style:italic;
 	font-family:arial, "courier new", impact;
-	font-size:20px;
-}
-.precioProm {
+	font-size:16px;
+	
 }
 .precioOrig {
+	text-decoration: line-through;
+	font-size: 16px;
+	color: red;
+	font-weight: bold;
+	padding-right: 20px;
+}
+.precioProm {
+	font-weight: bold;
+	font-size: 24px;
+	color:#47AB00;
+	padding-left: 20px;
 }
 .imgProm {
-	padding: 20px 0px 0px 0px;
+	padding: 5px 0px 5px 0px;
 	display: block;
+	height:140px;
+}
+
+.imgProm img {
+	margin-left:3px; 
+	margin-right:3px;
+	-webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+   -moz-box-shadow: 3px 4px 5px rgba(128,128,128,.5);
+    -webkit-box-shadow: 3px 4px 5px rgba(128,128,128,.5);
+    box-shadow: 3px 4px 5px rgba(128,128,128,.5);
 }
 
 .imgLargeProducto {
@@ -191,19 +283,16 @@ img.large{
 }
 
 
-
-
-
 div.agregar  {
     padding: 10px 10px 10px 10px;
     display:none;
     position: fixed;
     left: 50%;
     top: 50%;
-    width:600px;
-    height:600px;
-    margin-left: -300px;
-    margin-top: -300px;
+    width:500px;
+    height:300px;
+    margin-left: -250px;
+    margin-top: -200px;
     z-index:99999;
     -moz-box-shadow: 0 1px 4px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3);
@@ -214,84 +303,90 @@ div.agregar  {
     -moz-box-border-radius: .3em;
     -webkit-box-border-radius: .3em;
     border-radius: .3em;
-    background: rgba(224,239,246,0.85);
+    background: rgba(224,239,246,0.8);
 }
+
+div.agregar label {
+	font-weight: bold;
+	padding-top: 10px;
+}
+
 
 div.agregar  .textConfirm{
     text-align: center;
     width:100%;
-    height:75%;
-    
 }
 
 div.agregar  .textConfirm h3 {
     font-style: italic;
     
 }
-
-/*
-
-div.agregar  .buttonsConfirm{
-    text-align: center;
-    width:100%;
-    height:25%;
-    padding-bottom: 5px;
+div.agregar .contentConfirm {
+	text-align: center;
+	padding-top:10px;
+	padding-bottom:10px;
 }
 
-div.agregar .buttonsConfirm a {
-    cursor: pointer;
-    padding: 5px 10px 5px 10px;
-    margin: 5px 10px 5px 10px;
-    font-weight: bold;
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
-    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+div.agregar .contentConfirm ul {
+	list-style: none;
+}
+
+div.agregar .buttonsConfirm{
+	position:relative;
+	bottom: 10px;
+}
+
+
+#promocion #promoAgregada {
+	display:none;
+	position:absolute;
+	width: 200px;
+	height: 150px;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -100px;
+	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    box-shadow: 0 1px 4px rgba(0,0,0,.3);
     -moz-box-background-clip: padding-box;
     -webkit-box-background-clip: padding-box;
     background-clip: padding-box;
-    -moz-box-border-radius: .1em;
-    -webkit-box-border-radius: .1em;
-    border-radius: .1em;
-
-    
+    -moz-box-border-radius: .3em;
+    -webkit-box-border-radius: .3em;
+    border-radius: .3em;
+    background: rgba(199,247,245,0.7);
+	
 }
 
-div.agregar .buttonsConfirm a.ok {
-    background: rgba(51,204,0,0.8);
-    text-shadow: 0px 0px 0px;
+#promocion #promoAgregada .botonVerPedido {
+	padding-top: 10px;
 }
 
-
-div.agregar .buttonsConfirm a.cancel {
-    background: rgba(192,192,192,0.8);
-    text-shadow: 0px 0px 0px;
-}
-
-div.agregar .buttonsConfirm a.ok:hover {
-    
-    -moz-box-shadow: 0 3px 5px rgba(0,0,64,.3);
-    -webkit-box-shadow: 0 3px 5px rgba(0,0,64,.3);
-    box-shadow: 0 3px 5px rgba(0,0,64,.3);
-}
-
-
-div.agregar .buttonsConfirm a.cancel:hover {
- 
-    -moz-box-shadow: 0 3px 5px rgba(64,64,64,.3);
-    -webkit-box-shadow: 0 5px 4px rgba(64,64,64,.3);
-    box-shadow: 0 3px 5px rgba(64,64,64,.3);
-}
-
-div.agregar .buttonsConfirm a.ok:active {
-    background: rgba(102,255,51,0.8);
-
+#autores  {
+    padding: 10px 10px 10px 10px;
+    display:none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width:500px;
+    height:375px;
+    margin-left: -250px;
+    margin-top: -200px;
+    z-index:99999;
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    -moz-box-background-clip: padding-box;
+    -webkit-box-background-clip: padding-box;
+    background-clip: padding-box;
+    -moz-box-border-radius: .3em;
+    -webkit-box-border-radius: .3em;
+    border-radius: .3em;
+    background: rgba(199,247,245,0.9);
 }
 
 
-div.agregar .buttonsConfirm a.cancel:active {
-    background: rgba(224,224,224,0.8);
-}
-*/
 
 #listaCat .producto:hover {
 	-moz-box-shadow: 0 3px 5px rgba(0,0,64,.3);

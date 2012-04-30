@@ -44,6 +44,7 @@ function cargarPromo(){
 
 function nextPromo() {
 	promActual = (promActual +1) %promociones.length;
+	$('#promoAgregada').hide();
 	cargarPromo();
 	
 }
@@ -51,6 +52,7 @@ function nextPromo() {
 function prevPromo() {
 	if(promActual==0) promActual= promociones.length-1;
 	else promActual--;
+	$('#promoAgregada').hide();
 	cargarPromo();
 }
 
@@ -113,4 +115,10 @@ function okAgregarPromo() {
 	
 	$('div#loading').hide();
 	$('#promocion .agregar').hide();
+	$('#promoAgregada').show('slow');
+	setTimeout(ocultarCartelPromo,3500);
+}
+
+function ocultarCartelPromo() {
+	$('#promoAgregada').hide('slow');
 }

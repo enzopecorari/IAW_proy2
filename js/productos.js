@@ -3,8 +3,10 @@ function cargarProductos(){
 	
 	
 	var prods = xmlDocProd.getElementsByTagName("categoria");
-	var div = $('#listaCat');
-	div.collapsibleset();
+	var div1 = $('#listaCat1');
+	var div2 = $('#listaCat2');
+	div1.collapsibleset();
+	div2.collapsibleset();
 	var nomCat, prodsCat, _nombre, _precio, _peso, _imgS, _imgL;
 	for(j = 0; j <prods.length; j++){ //Por cada categoria
 		cat = new Categoria(prods[j].childNodes[1].firstChild.nodeValue);
@@ -30,18 +32,22 @@ function cargarProductos(){
 					"<span class='precioProducto'>$"+_precio+" </span>" + "<span class='pesoProducto'>"+_peso+"gr. </span>" +
 					"<div class='imgSmallProducto'><img class='small' src='img/"+_imgS+"' alt='small image'/></div>"+ "</div></div>"; 
 			
-			//prodsCat += "<div class='imgLargeProducto'><img src='img/"+_imgL+"' alt='large image'/></div>"
+			
 			
 			
 		}
 		
 		categorias[categorias.length] = cat;
-		div.append("<div data-role='collapsible' data-theme='e' data-content-theme='e' class='categoria'><h2>"+nomCat+"</h2>"+prodsCat+"</div>")
+		div1.append("<div  data-role='collapsible' data-theme='e' data-content-theme='e' class='categoria'><h2>"+nomCat+"</h2>"+prodsCat+"</div>")
+		div2.append("<div  data-role='collapsible' data-theme='b' data-content-theme='b' class='categoria'><h2>"+nomCat+"</h2>"+prodsCat+"</div>")
+		
 	}
 
-	div.on("click",".item",crearDialogo);
+	div1.on("click",".item",crearDialogo);
+	div2.on("click",".item",crearDialogo);
 
-	div.collapsibleset('refresh');
+	div1.collapsibleset('refresh');
+	div2.collapsibleset('refresh');
 	
 
 }

@@ -93,13 +93,6 @@ div#imgLoading {
     z-index:99999;
 }
 
-.estilo1 {
-	display;
-}
-.estilo2 {
-	display:none;
-}
-
 
 #infoHome {
 	text-align:center;
@@ -130,8 +123,8 @@ div#imgLoading {
 	width:320px;
 	padding-left: 10px;
 	padding-top: 10px;
-	color: #F43B16;
-	text-shadow: 0 /*{c-body-shadow-x}*/ 1px /*{c-body-shadow-y}*/ 5px /*{c-body-shadow-radius}*/ #848484/*{c-body-shadow-color}*/
+	color: #008000;
+	text-shadow: 0 /*{c-body-shadow-x}*/ 1px /*{c-body-shadow-y}*/ 1px /*{c-body-shadow-radius}*/ #848484/*{c-body-shadow-color}*/
 }
 
 #infoHome .botonAutores {
@@ -142,8 +135,8 @@ div#imgLoading {
 }
 
 #titlePromos {
-	color: #F43B16;
-	text-shadow: 0 /*{c-body-shadow-x}*/ 1px /*{c-body-shadow-y}*/ 5px /*{c-body-shadow-radius}*/ #848484/*{c-body-shadow-color}*/
+	color: #008000;
+	text-shadow: 0 /*{c-body-shadow-x}*/ 1px /*{c-body-shadow-y}*/ 1px /*{c-body-shadow-radius}*/ #848484/*{c-body-shadow-color}*/
 }
 
 #promocion {
@@ -222,6 +215,11 @@ div#imgLoading {
 	font-size:16px;
 	
 }
+
+#promocion .precios {
+	vertical-align:middle;
+}
+
 .precioOrig {
 	text-decoration: line-through;
 	font-size: 16px;
@@ -231,7 +229,7 @@ div#imgLoading {
 }
 .precioProm {
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 26px;
 	color:#47AB00;
 	padding-left: 20px;
 }
@@ -252,11 +250,7 @@ div#imgLoading {
     box-shadow: 3px 4px 5px rgba(128,128,128,.5);
 }
 
-.imgLargeProducto {
-	text-align:center;
-	display:block;
-	width:520px;
-}
+
 
 .contentConfirm {
 	text-align:center;
@@ -335,7 +329,7 @@ div.agregar .buttonsConfirm{
 	top: 50%;
 	left: 50%;
 	margin-top: -100px;
-	margin-left: -100px;
+	margin-left: -75px;
 	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3);
     box-shadow: 0 1px 4px rgba(0,0,0,.3);
@@ -406,8 +400,9 @@ img.small {
 .listaCat .producto {
 	display:inline-block;
 	width: 200px;
-	height: 200px;
+	height: 190px;
 	text-align: center;
+	padding-top:10px;
 }
 .listaCat .producto .nombreProducto{
 	font-weight: bold;
@@ -426,14 +421,14 @@ img.small {
 
 .listaCat .producto:hover {
 	cursor:pointer;
-	
+	-moz-box-shadow: 0 3px 5px rgba(0,0,64,.3);
+    -webkit-box-shadow: 0 3px 5px rgba(0,0,64,.3);
+    box-shadow: 0 3px 5px rgba(0,0,64,.3);	
     background: rgba(245,239,145,0.9);
 }
 
 .listaCat .producto:active {
-	-moz-box-shadow: 0 3px 5px rgba(0,0,64,.3);
-    -webkit-box-shadow: 0 3px 5px rgba(0,0,64,.3);
-    box-shadow: 0 3px 5px rgba(0,0,64,.3);
+	background: rgba(224,224,224,0.8);
 }
 
 #productos div.agregar {
@@ -447,6 +442,89 @@ img.small {
     margin-left: -250px;
     margin-top: -275px;
 }
+#productos div.agregar .textConfirm {
+	height:480px;
+}
+
+#productos div.agregar .nombreProducto {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#productos div.agregar .imgLargeProducto {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align:center;
+	height: 320px;
+}
+
+#productos div.agregar .imgLargeProducto img {
+	max-height: 320px;
+	max-width: auto;
+}
+#productos div.agregar .contentConfirm {
+	padding: 0px 0px 0px 0px;
+}
+
+#productos div.agregar label {
+	display: inline-block;
+} 
+#productos div.agregar .ui-select {
+	display: inline-block;
+} 
+
+#productos div.agregar .seleccion {
+	vertical-align:middle;	
+}
+
+#productos div.agregar .totalProd {
+	padding-top: 6px;
+	padding-bottom: 15px;
+	vertical-align:middle;	
+	display: inline-block;
+}
+#productos div.agregar .pesoProd {
+	font-style: italic;
+	font-size: 16px;
+	padding: 0px 20px 12px 30px; 
+}
+#productos div.agregar .precioProd {
+	font-weight: bold;
+	font-size: 20px;
+	padding: 0px 0px 12px 30px; 
+}
+
+#productos div.agregar .buttonsConfirm {
+	padding-top: 10px;
+	
+}
+
+#productos #prodAgregado {
+	display:none;
+	position:fixed;
+	width: 140px;
+	height: 140px;
+	top: 100px;
+	right: 0px;
+	z-index: 1000;
+	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    -moz-box-background-clip: padding-box;
+    -webkit-box-background-clip: padding-box;
+    background-clip: padding-box;
+    -moz-box-border-radius: .3em;
+    -webkit-box-border-radius: .3em;
+    border-radius: .3em;
+    background: rgba(245,239,145,0.7);
+	
+}
+
+#productos #prodAgregado .botonVerPedido {
+	padding-top: 10px;
+}
+
+
 
 .destroy {
     background: url("images/destroy.png") no-repeat scroll 0 0 transparent;

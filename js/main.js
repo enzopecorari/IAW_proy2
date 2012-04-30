@@ -40,6 +40,7 @@ $(document).ready(function() {
 	$('.changeStyle').click(changeStyle);
 	$('a.autores').click(mostrarAutores);
 	$('a.volverAutores').click(volverAutores);
+	$('.menu a').click(ocultarCarteles);
 	$('div#loading').hide('slow');
     $('#imgLoading').hide('slow');
 });
@@ -62,6 +63,7 @@ function changeStyle() {
 	localStorage.setItem('proy2-style',style);
 	aplicarEstilo();
 	
+	
 }
 
 
@@ -70,10 +72,13 @@ function aplicarEstilo() {
 	if(style==1) {
 		$(".estilo1").show();
 		$(".estilo2").hide();
+		
 	}
 	else if (style==2) {
 		$(".estilo2").show();
 		$(".estilo1").hide();
+
+		
 	} 
 
 }
@@ -84,7 +89,8 @@ function mostrarAutores() {
 			"<h4>LU: 89112 - enzo_pecorari@hotmail.com</h4>" +
 			"<h3>Diego M. Schwindt</h3>" +
 			"<h4>LU: 88993 - diego.sch21.com</h4>" +
-			"<p>Ingenier&iacute;a de Aplicaciones Web - 2do cuatrimestre 20120</br>Universidad Nacional del Sur</p>";
+			"<p>Ingenier&iacute;a de Aplicaciones Web - 2do cuatrimestre 2012</br>Universidad Nacional del Sur</p>"+
+			"<p><strong>Un proyecto bien de machos!! =P</p>";
 	$("#autores .contentAutores").html(html);
 	$('div#loading').show();
 	$("#autores").show();
@@ -93,4 +99,9 @@ function mostrarAutores() {
 function volverAutores(){
 	$('div#loading').hide();
 	$("#autores").hide();
+}
+
+function ocultarCarteles() {
+	$('#prodAgregado').hide();
+	$('#promoAgregada').hide();
 }

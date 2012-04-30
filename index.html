@@ -92,15 +92,15 @@
                		<a class="nextPromo" id="nextPromo" title="Promoci&oacute;n siguiente" ></a>
 	    			<span class="descProm"></span>
     				<div class="imgProm"></div>
-    				<span class="precioOrig"></span><span class="precioProm"></span>
+    				<div class="precios"><span class="precioOrig"></span><span class="precioProm"></span></div>
     				<a class="pedirPromo" id="pedirPromo" title="Agregar promoci&oacute;n al pedido..." ></a>
     				<div id="promoAgregada">
-								<h3>Promoción agregada al pedido</h3>
+								<p><strong>Promoci&oacute;n agregada al pedido</strong></p>
 								<div class="botonVerPedido estilo1">
-	                       			<a href="#pedido" data-role="button" data-transition="pop" data-theme="e">Ver pedido</a>
+	                       			<a href="#pedido" data-role="button" data-transition="pop" data-theme="e" data-mini='true' data-inline='true'>Ver pedido</a>
                 				</div>
                 				<div class="botonVerPedido estilo2">
-	                       			<a href="#pedido" data-role="button" data-transition="pop" data-theme="b">Ver pedido</a>
+	                       			<a href="#pedido" data-role="button" data-transition="pop" data-theme="b" data-mini='true' data-inline='true'>Ver pedido</a>
                 				</div>
 														
 					</div>
@@ -189,7 +189,16 @@
 				<div class="estilo2 listaCat" id="listaCat2"  data-role="collapsible-set" >
                     
 				</div>
-            
+            	
+            	<div id='prodAgregado'>
+            		<p><strong>Producto agregado al pedido</strong></p>
+					<div class='botonVerPedido estilo1'>
+						<a href='#pedido' data-role='button' data-transition='pop' data-theme='e' data-mini='true' data-inline='true'>Ver pedido</a>
+					</div>
+    				<div class='botonVerPedido estilo2'>
+    					<a href='#pedido' data-role='button' data-transition='pop' data-theme='b' data-mini='true' data-inline='true'>>Ver pedido</a>
+					</div>
+				</div>
             
             
             </div> 
@@ -204,15 +213,18 @@
 	                <div class="contentConfirm">
 													
 	                </div>
-	                <label for="selectCant">Cantidad:</label>
-	               	<select id="selectCant" data-mini="true" data-inline="true" onchange="cambiarCantAgregarProd(this)">
-   						
-					</select> 
-					<div class="totalProd"></div>
+	                <div class="seleccion">
+		                <label for="selectCant">Cantidad:</label>
+		               	<select id="selectCant" data-mini="true" data-inline="true" onchange="cambiarCantAgregarProd(this)">
+						</select>
+						<div class="totalProd"></div>
+	               	</div> 
+					
 					
 	    		</div> 
 	            <div class="buttonsConfirm">
-	                <a class="ok" data-role="button" data-theme="b" data-inline="true" onclick="okAgregar();">Agregar</a>
+	                <a class="ok estilo1" data-role="button" data-theme="e" data-inline="true" onclick="okAgregar();">Agregar</a>
+	                <a class="ok estilo2" data-role="button" data-theme="b" data-inline="true" onclick="okAgregar();">Agregar</a>
 	                <a class="cancel" data-role="button" data-theme="a" data-inline="true" >Cancel</a>
 	                        
 	            </div> 
@@ -260,19 +272,13 @@
             
             <div class="pageContent" data-role="content">
 				
-				<div>
-					<h2>productos:</h2>
-					<div>
-	                    <ul class='estilo1' data-role='listview' data-theme='e' id='productosPedido1'>
+				<div id="listasPed">
+					<ul class='estilo1' data-role='listview' data-theme='e' id='productosPedido1'>
 	                        
-	                    </ul>
-						<ul class='estilo2' data-role='listview' data-theme='b' id='productosPedido2'>
-	                        
-	                    </ul>
-                	</div>
-				</div>
-				<div>
-					<h2>promos:</h2>
+                    </ul>
+					<ul class='estilo2' data-role='listview' data-theme='b' id='productosPedido2'>
+                        
+                    </ul>
 					<ul class='estilo1' data-role='listview' data-theme='c' data-divider-theme='e' id="promosPedido1">
 					
 					</ul>
@@ -280,11 +286,14 @@
 					
 					</ul>
 				</div>
-				<div>
-					<div>Peso: <span id="pesoTotal"></span> kg.
-					TOTAL: $<span id="precioTotal"></span></div>
-					<a id="encargar" data-role="button" data-theme="b" data-inline="true" >Encargar pedido</a>
-					<a id="clear" data-role="button" data-theme="a" data-inline="true">Quitar todo</a> 
+				<div id="totalesPed">
+					<div id="pesoT">Peso: <span id="pesoTotal"></span> kg.</div>
+					<div id="precioT">TOTAL: $<span id="precioTotal"></span></div>
+					<div id="botonesPed">
+						<a id="encargar estilo1" data-role="button" data-theme="e" data-inline="true" >Encargar pedido</a>
+						<a id="encargar estilo2" data-role="button" data-theme="b" data-inline="true" >Encargar pedido</a>
+						<a id="clear" data-role="button" data-theme="a" data-inline="true">Quitar todo</a>
+					</div> 
 				</div>
 				
 				

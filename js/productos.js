@@ -75,8 +75,9 @@ function crearDialogo(event) {
 			options+= "<option value="+cant+">"+cant+"</option>";
 	}
 	$('#productos .agregar #selectCant').html(options).selectmenu('refresh');
-	
-	html = "<span class='pesoProd'>"+prod.getPeso()+"</span><span class='precioProd'>"+prod.getPrecio()+"</span>";
+	var peso = prod.getPeso()*prod.getUnidEncargue();
+	peso  = Math.round(peso * Math.pow(10, 2)) / Math.pow(10, 2);
+	html = "<span class='pesoProd'>"+peso+"kg.</span><span class='precioProd'>$"+prod.getPrecio()*prod.getUnidEncargue()+"</span>";
 	$('#productos .agregar .totalProd').html(html);
 	$('#productos .agregar .cancel').click(function() {
 		fondo.hide();
@@ -94,7 +95,9 @@ function cambiarCantAgregarProd(elem) {
 	var numProd = Number(posProd)%100;
 	var prod = categorias[numCat].getProducto(numProd);
 	var newCant = Number($(elem).val());
-	var html = "<span class='pesoProd'>"+prod.getPeso()*newCant+"</span><span class='precioProd'>"+prod.getPrecio()*newCant+"</span>";
+	var peso = prod.getPeso()*newCant;
+	peso  = Math.round(peso * Math.pow(10, 2)) / Math.pow(10, 2);
+	var html = "<span class='pesoProd'>"+peso+"kg.</span><span class='precioProd'>$"+prod.getPrecio()*newCant+"</span>";
 	$('#productos .agregar .totalProd').html(html);
 	
 }
@@ -109,5 +112,11 @@ function okAgregar() {
 	
 	$('div#loading').hide();
 	$('#productos .agregar').hide();
+	$('#prodAgregado').show('slow');
+	setTimeout(ocultarCartelProd,3500);
 	
+}
+
+function ocultarCartelProd() {
+	$('#prodAgregado').hide('slow');
 }

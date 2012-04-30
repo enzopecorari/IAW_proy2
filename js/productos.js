@@ -28,9 +28,9 @@ function cargarProductos(){
 			productos[productos.length] = produc;
 			id= cat.getCantidad() + 100*categorias.length;
 			cat.addProducto(produc);
-			prodsCat += "<div class='item'><div class='producto' id=p"+id+">" + "<span class='nombreProducto'>"+_nombre+" </span>" +
-					"<span class='precioProducto'>$"+_precio+" </span>" + "<span class='pesoProducto'>"+_peso+"gr. </span>" +
-					"<div class='imgSmallProducto'><img class='small' src='img/"+_imgS+"' alt='small image'/></div>"+ "</div></div>"; 
+			prodsCat += "<div class='producto' id=p"+id+">" + "<span class='nombreProducto'>"+_nombre+" </span>" +
+					"<div class='imgSmallProducto'><img class='small' src='img/"+_imgS+"' alt='small image'/></div>"+
+					"<span class='precioProducto'>$"+_precio+" </span></div>"; 
 			
 			
 			
@@ -43,8 +43,8 @@ function cargarProductos(){
 		
 	}
 
-	div1.on("click",".item",crearDialogo);
-	div2.on("click",".item",crearDialogo);
+	div1.on("click",".producto",crearDialogo);
+	div2.on("click",".producto",crearDialogo);
 
 	div1.collapsibleset('refresh');
 	div2.collapsibleset('refresh');
@@ -55,7 +55,7 @@ function cargarProductos(){
 function crearDialogo(event) {
 	var dialog = $('#productos .agregar');
 	var fondo = $('div#loading');
-	var posProd = $(this.firstChild).attr("id").substring(1);
+	var posProd = $(this).attr("id").substring(1);
 	prodActual = posProd;
 	var numCat = Math.floor(Number(posProd)/100);
 	var numProd = Number(posProd)%100;

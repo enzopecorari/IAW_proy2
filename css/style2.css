@@ -388,6 +388,28 @@ div.agregar .buttonsConfirm{
 
 
 
+img.small {
+	margin-left:3px; 
+	margin-right:3px;
+	-webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+   -moz-box-shadow: 3px 4px 5px rgba(128,128,128,.5);
+    -webkit-box-shadow: 3px 4px 5px rgba(128,128,128,.5);
+    box-shadow: 3px 4px 5px rgba(128,128,128,.5);
+}
+#listaCat2 {
+	text-align:center;
+	padding: 10px 10px 30px 10px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+        
+    width:680px;
+    margin-left: -340px;
+
+}
+
 #listaCat .producto:hover {
 	-moz-box-shadow: 0 3px 5px rgba(0,0,64,.3);
     -webkit-box-shadow: 0 3px 5px rgba(0,0,64,.3);

@@ -93,7 +93,7 @@ function actualizarPedido(almacenado) {
 
 function almacenarPedido() {
 	pedidoSerialized = JSON.stringify(Pedido.data);
-	alert(pedidoSerialized);
+
 	localStorage.setItem('pedidoIAW',pedidoSerialized);
 
 }

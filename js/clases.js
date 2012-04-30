@@ -114,7 +114,7 @@ var Pedido = {
 		var prod = categorias[numCat].getProducto(numProd);
 		this.data.pesoTotal += prod.getPeso() *_cant;
 		this.data.precioTotal += prod.getPrecio() *_cant;
-		alert(this.data.pesoTotal +" "+this.data.precioTotal);
+
 		return i;
 	},
 	addPromocion: function(_promo,_cant) { 
@@ -132,7 +132,7 @@ var Pedido = {
 		}
 		this.data.pesoTotal += promociones[_promo].getPeso() *_cant;
 		this.data.precioTotal += promociones[_promo].getPrecioProm() *_cant;
-		alert(this.data.pesoTotal +" "+this.data.precioTotal);
+
 		return i;
 
 	},
@@ -142,7 +142,7 @@ var Pedido = {
 		var prod = categorias[numCat].getProducto(numProd);
 		this.data.pesoTotal -= prod.getPeso() *this.data.productosCant[index];
 		this.data.precioTotal -= prod.getPrecio() *this.data.productosCant[index];
-		alert(this.data.pesoTotal +" "+this.data.precioTotal);
+
 		this.data.productos[index] = -1;
 		this.data.productosCant[index] =-1;
 		
@@ -154,13 +154,13 @@ var Pedido = {
 		var prod = categorias[numCat].getProducto(numProd);
 		this.data.pesoTotal += prod.getPeso() *dif;
 		this.data.precioTotal += prod.getPrecio() *dif;
-		alert(this.data.pesoTotal +" "+this.data.precioTotal);
+
 		this.data.productosCant[index] =cant;
 	},
 	removePromocion: function(index){
 		this.data.pesoTotal -= promociones[this.data.promociones[index]].getPeso() *this.data.promocionesCant[index];
 		this.data.precioTotal -= promociones[this.data.promociones[index]].getPrecioProm() *this.data.promocionesCant[index];
-		alert(this.data.pesoTotal +" "+this.data.precioTotal);
+
 		this.data.promociones[index] = -1;
 		this.data.promocionesCant[index] =-1;
 		
@@ -170,7 +170,7 @@ var Pedido = {
 		this.data.pesoTotal += promociones[this.data.promociones[index]].getPeso() *dif;
 		this.data.precioTotal += promociones[this.data.promociones[index]].getPrecioProm() *dif;
 		this.data.promocionesCant[index] =cant;
-		alert(this.data.pesoTotal +" "+this.data.precioTotal);
+
 	},
 	clear: function() {
 		this.data.productos = [];

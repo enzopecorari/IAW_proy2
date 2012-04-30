@@ -379,18 +379,73 @@ div.agregar .buttonsConfirm{
 
 
 
+img.small {
+	margin-left:3px; 
+	margin-right:3px;
+	-webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+   -moz-box-shadow: 3px 4px 5px rgba(128,128,128,.5);
+    -webkit-box-shadow: 3px 4px 5px rgba(128,128,128,.5);
+    box-shadow: 3px 4px 5px rgba(128,128,128,.5);
+}
+
+#listaCat1 {
+	text-align:center;
+	padding: 10px 10px 30px 10px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+        
+    width:680px;
+    margin-left: -340px;
 
 
+}
 
+.listaCat .producto {
+	display:inline-block;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+}
+.listaCat .producto .nombreProducto{
+	font-weight: bold;
+	font-size: 14px;
+	
+}
+.listaCat .producto .precioProducto{
+	font-weight: bold;
+	margin-top:10px;
+	
+}
+.listaCat .producto .imgSmallProducto {
+	padding-top:10px;
+	padding-bottom:5px;
+}
 
-#listaCat .producto:hover {
+.listaCat .producto:hover {
+	cursor:pointer;
+	
+    background: rgba(245,239,145,0.9);
+}
+
+.listaCat .producto:active {
 	-moz-box-shadow: 0 3px 5px rgba(0,0,64,.3);
     -webkit-box-shadow: 0 3px 5px rgba(0,0,64,.3);
     box-shadow: 0 3px 5px rgba(0,0,64,.3);
 }
 
-#listaCat .producto:active {
-	background: rgba(224,224,224,0.8);
+#productos div.agregar {
+	padding: 10px 10px 10px 10px;
+    display:none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width:550px;
+    height:550px;
+    margin-left: -250px;
+    margin-top: -275px;
 }
 
 .destroy {
